@@ -1,0 +1,83 @@
+ADIS is an Ada Joint Program Office sponsored effort to provide an Ada
+interface to the IEEE 1278 Distributed Interactive Simulation (DIS) protocols.
+The project was developed in Ada 83 (MIL-STD-1815).  ADIS consists of three
+components: the DIS Gateway (DG), the DIS Library (DL), and the Ordnance Server
+(OS).
+
+The DG is a software-only interface solution designed to facilitate the
+connection of one or more simulations to a DIS network.  The DG is implemented
+as a client-server architecture, allowing multiple clients to communicate over
+a DIS network via a single UDP port.  This feature is not available in the
+majority of the network interface systems currently available.  Both the DG
+client and server can be controlled using a graphical user interface (GUI). 
+The GUI allows the user to input a variety of network variables, including
+exercise ID and UDP port number.
+
+The DL contains a variety of routines common to DIS applications.  The routines
+available from the library include procedures that filter and sort by distance,
+filter by orientation, perform coordinate conversions, and perform smoothing
+on entity positions.  The routines that filter and sort by distance, and filter
+by orientation are common to applications such as visual and audio servers,
+which prioritize entities based on relative location and orientation.  Almost
+all DIS applications perform some type of coordinate conversion, hence the DL
+contains routines to perform the most common types of these conversions.
+
+The OS provides distributed munition fly-outs for one or more simulations on a
+DIS network.  The OS listens for fire PDUs sent by specific entities on a
+network, and begins modeling a munition when a fire PDU describing the
+munitions type, location and velocity is received.  The ordnance server models
+a variety of munitions, including bombs and rockets.  Munition parameters such
+as burn rate and fuse type are input to the OS via a GUI.  Simulation control
+parameters, such as start, stop, freeze, and resume can also be input through
+the GUI.  The OS also provides a single step mode, which can be very useful for
+debugging.  The OS software also contains bindings to the ModSAF terrain 
+database interface.
+
+
+There is also a set of packages that define the DIS protocol data units and
+provide functions for manipulating them.  Additionally a Motif widget toolkit
+is included that can be used independently of the ADIS software.
+
+
+There are four files in the ADIS distribution:
+
+    README                This file
+    ADIS-src.zip          Source code for the ADIS project
+    ADIS-doc.zip          Documentation for the project
+    ADIS-bin.zip          Binaries for the DIS Gateway Server and its
+                          Graphical User Interface
+
+The documentation for the project is distributed in several different formats
+in the hopes that at least one of them is usable by your site.  Documentation
+includes MIL-STD-2167A Software Requirements Specification (SRS), Interface
+Requirements Specification (IRS), and Software Design Document (SDD).  There
+is also a Software Reference Manual (SRM) for each component of ADIS.  For
+most applications, the SRM will be the most useful document.  The formats
+available consist of Word for Windows 2.0 (WFW, using .DOC for an extension),
+Rich Text Format (RTF, a common format supported by most WYSIWYG editors),
+ASCII (plain text, using .TXT for an extension), and PostScript (PS).  Not
+all formats are provided for all documents -- for instance, an ASCII version
+of the MIL-STD-2167A documents would lose all the diagrams, which are very
+important in such documentation.  On the other hand, ASCII versions of the
+SRMs are provided, so that they can be viewed and searched online by
+programmers.  The following table shows the formats provided for each type
+of documentation:
+
+           WFW    RTF    ASCII    PS
+
+    SRS     X      X       -      -
+    IRS     X      X       -      -
+    SDD     X      X       -      -
+    SRM     X      -       X      X
+
+        X = provided
+        - = not provided
+
+A Makefile is provided to assist in creating the binaries for ADIS.  This may
+require editing to conform to your own site's configuration.  Read through the
+Makefile, and make any changes required for your site, then type "make".
+
+ADIS software was developed using Silicon Graphics Indigo R4000 machines using
+Verdix Ada 6.2.1 under the IRIX operating system, version 5.2.  The Graphical
+User Interfaces (GUIs) were developed for X Window version X11R5 using 
+Motif 1.2.

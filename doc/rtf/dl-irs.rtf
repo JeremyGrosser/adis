@@ -1,0 +1,327 @@
+{\rtf1\ansi \deff4\deflang1033{\fonttbl{\f4\froman\fcharset0\fprq2 Times New Roman;}{\f5\fswiss\fcharset0\fprq2 Arial;}{\f8\froman\fcharset0\fprq2 Times;}{\f27\froman\fcharset0\fprq0 Courier PS;}}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;
+\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\f4\fs20 \snext0 Normal;}{\s1\sb240 \b\f5\ul \sbasedon0\snext0 heading 1;}{\s2\sb120 \b\f5 \sbasedon0\snext0 heading 2;}{
+\s3\li360 \b\f4 \sbasedon0\snext38 heading 3;}{\s4\li360 \f4\ul \sbasedon0\snext38 heading 4;}{\s5\li720 \b\f4\fs20 \sbasedon0\snext38 heading 5;}{\s6\li720 \f4\fs20\ul \sbasedon0\snext38 heading 6;}{\s7\li720 \i\f4\fs20 \sbasedon0\snext38 heading 7;}{
+\s8\li720 \i\f4\fs20 \sbasedon0\snext38 heading 8;}{\s9\li720 \i\f4\fs20 \sbasedon0\snext38 heading 9;}{\*\cs10 \additive Default Paragraph Font;}{\s21\li2160\ri720\tldot\tx8280\tqr\tx8640 \f4\fs20 \sbasedon0\snext0 toc 4;}{
+\s22\li1440\ri720\tldot\tx8280\tqr\tx8640 \f4\fs20 \sbasedon0\snext0 toc 3;}{\s23\li720\ri720\tldot\tx8280\tqr\tx8640 \f4\fs20 \sbasedon0\snext0 toc 2;}{\s24\ri720\tldot\tx8280\tqr\tx8640 \f4\fs20 \sbasedon0\snext0 toc 1;}{\s25\li2160 \f4\fs20 
+\sbasedon0\snext0 index 7;}{\s26\li1800 \f4\fs20 \sbasedon0\snext0 index 6;}{\s27\li1440 \f4\fs20 \sbasedon0\snext0 index 5;}{\s28\li1080 \f4\fs20 \sbasedon0\snext0 index 4;}{\s29\li720 \f4\fs20 \sbasedon0\snext0 index 3;}{\s30\li360 \f4\fs20 
+\sbasedon0\snext0 index 2;}{\s31 \f4\fs20 \sbasedon0\snext0 index 1;}{\s33 \f4\fs20 \sbasedon0\snext31 index heading;}{\s34\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext34 footer;}{\s35\tqc\tx4320\tqr\tx8640 \f4\fs20 \sbasedon0\snext35 header;}{\s37 
+\f4\fs20 \sbasedon0\snext37 footnote text;}{\s38\li720 \f4\fs20 \sbasedon0\snext38 Normal Indent;}}{\info{\title DIS Library (DL) CSCI IRS}{\subject Interface Requirements Specification}{\author Sandi P. Hauenstein}{\operator Sandi P. Hauenstein}
+{\creatim\yr1994\mo9\dy28\hr9\min14}{\revtim\yr1994\mo9\dy28\hr9\min36}{\printim\yr1994\mo9\dy28\hr9\min36}{\version3}{\edmins5}{\nofpages8}{\nofwords1208}{\nofchars8447}{\vern49203}}
+\widowctrl\ftnbj\aenddoc\hyphhotz0\noextrasprl\prcolbl\cvmme\sprsspbf\brkfrm\swpbdr\hyphcaps0 \fet0\sectd \linex0\endnhere {\header \pard\plain \s35\qc\brdrb\brdrs\brdrw15\brsp20 \tqc\tx4320\tqr\tx8640 \f4\fs20 {\i\f27 
+JFT-145-DL.IRS-V1, Rev. B, 30-Sept-94
+\par }\pard \s35\tqc\tx4320\tqr\tx8640  
+\par 
+\par }{\footer \pard\plain \s34\qc\tqc\tx4320\tqr\tx8640 \f4\fs20 {\field{\*\fldinst PAGE}{\fldrslt 1}}
+\par }{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5
+\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang
+{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \f4\fs20 {\b\fs24 1 Scope }{\pard\plain \v\f4 {\tc {\fs24 1\tab Scope\tcl}}}{\fs24 
+\par 
+\par }\pard \fi360 {\fs24 The following paragraphs identify the interfaces, provide a system overview, and describe the purpose and contents of this document.}{\b\fs24 
+\par }\pard {\b\fs24  
+\par }\pard \keepn {\b\fs24 1.1  Identification}{\pard\plain \keepn \v\f4 {\tc {\fs24 1.1\tab Identification\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par }\pard \fi360\keepn {\fs24 This Interface Requirements Specification  (IRS) establishes the requirements for the interface for the CSCI identified as DIS Library (DL), CSCI}{\i\fs24  }{\fs24 
+2 of  the Ada Distributed Interactive Simulation (ADIS) Support system.  Table 1.1-1 identifies the DL interface and the associated project-unique identifier.
+\par }\pard \qc {\fs24 
+\par }\pard \qc\keepn {\b\fs24 Table 1.1-1
+\par DL Interfaces}{\pard\plain \qc\keepn \v\f4 {\tc {\fs24 1.1-1\tab DL Interfaces\tcl\tcf116}}}{\fs24 
+\par 
+\par }\trowd \trgaph108\trleft1092\trkeep \clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx4122\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx7557 \pard \qc\keepn\intbl {\b\fs24 Project Unique Identifier
+\cell Interface Name\cell }\pard \intbl {\b\fs24 \row }\trowd \trgaph108\trleft1092\trkeep \clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx4122\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrb
+\brdrs\brdrw30 \clbrdrr\brdrs\brdrw30 \cellx7557 \pard \li540\keepn\intbl {\fs24 DL-EI-1\cell }\pard \li180\keepn\intbl {\fs24 DIS Library Interface\cell }\pard \intbl {\fs24 \row }\pard \qc {\fs24 
+\par }\pard \keepn {\b\fs24 1.2.  System Overview}{\pard\plain \keepn \v\f4 {\tc {\fs24 1.2\tab System Overview\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par }\pard \fi360\keepn {\fs24 
+The  purpose of the ADIS system is to provide the Ada community access to DIS technology.  DIS, or Distributed Interactive Simulation, is a standard which enables communication among distributed simulation facilities.  The inter-site communication packets
+ consist of Protocol Data Units (PDUs), which define the characteristics of the simulation entities.  Distributed simulation exercises require the transmission of PDUs under specific conditions in order to maintain the fidelity of the simulation.
+\par 
+\par The following paragraphs identify and describe the role within the system for each interface to which this IRS applies.
+\par }\pard {\fs24 
+\par }\pard \keepn {\b\fs24 1.2.1 DIS Library Interface (DL-EI-1)}{\pard\plain \keepn \v\f4 {\tc {\fs24 1.2.1\tab DIS Library Interface (DL-EI-1)\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par }\pard \fi360\keepn {\fs24 
+The DIS Library Interface (DL-EI-1) is the interface from the DIS Library (DL), CSCI 2 to the other CSCIs within the ADIS system.  These other CSCIs are the DIS Gateway (DG), CSCI 1 and the Ordnance Server (OS), CSCI 3.  Additiona
+lly, this interface may also be used by simulation models which require operations on raw (i.e., DIS-formatted) data. The role of this interface within the ADIS system is to facilitate the use of generic, re-usable software filters by all CSCIs within the
+ system.
+\par }\pard {\fs24 
+\par }\pard \keepn {\b\fs24 1.3  Document Overview}{\pard\plain \keepn \v\f4 {\tc {\fs24 1.3\tab Document Overview\tcl}}}{\fs24 
+\par 
+\par }\pard \fi360\keepn {\fs24 The purpose of this IRS is to specify the interface requirements for the DL CSCI interface identified in section 1.1.  This specification identifies the interface and defines the purpose, r
+equirements, and data transmitted across it. 
+\par }\pard \keepn {\b\fs24 
+\par 2  Applicable Documents}{\pard\plain \keepn \v\f4 {\tc {\fs24 2.0\tab Applicable Documents\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par }\pard \fi360\keepn {\fs24 The following paragraphs specify government and non-government documents which apply to this specification.
+\par }\pard \keepn {\fs24 
+\par }{\b\fs24 2.1  Government Documents}{\pard\plain \keepn \v\f4 {\tc {\fs24 2.1\tab Government Documents\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par }\pard \fi360\keepn {\fs24 
+The following documents (see Table 2.1-1) of the exact issue shown form a part of this specification to the extent specified herein.  In the event of conflict between the documents referenced herein and the contents of this specif
+ication, the contents of this specification shall be considered a superseding requirement.
+\par }\pard {\fs24 
+\par }\pard \qc\keepn {\b\fs24 Table 2.1-1
+\par Government Documents}{\pard\plain \qc\keepn \v\f4 {\tc {\fs24 2.1-1\tab Government Documents\tcl\tcf116}}}{\fs24 
+\par }\pard \keepn\tx6030 {\fs24 
+\par }\trowd \trgaph108\trleft-108\trkeep \cellx2088\cellx8478 \pard \keepn\intbl\tx6030 {\fs24 Document Number\cell Title\cell }\pard \intbl {\fs24 \row }\trowd \trgaph108\trleft-108\trkeep \cellx2088\cellx8478 \pard \keepn\intbl\tx6030 {\fs24 \cell \cell 
+}\pard \intbl {\fs24 \row }\pard \keepn\intbl\tx6030 {\fs24 DOD-STD-2167A\cell Defense System Software Development\cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl\tx6030 {\fs24 \cell \cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl\tx6030 {\fs24 
+DI-MCCR-80026A\cell Interface Requirements Specification\cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl\tx6030 {\fs24 \cell \cell }\pard \intbl {\fs24 \row }\trowd \trgaph108\trleft-108\trkeep \cellx2088\cellx8478 \pard \keepn\intbl\tx6030 {\fs24 
+\cell Statement of Work - Ada Distributed Interactive Simulation Support\cell }\pard \intbl {\fs24 \row }\pard \tx6030 
+\par \pard \fi360 {\fs24 Copies of specifications, standards, drawings, and publications required by suppliers in connection with specified procurement functions should be obtained from the contracting agency or as directed by the contracting officer.
+\par }\pard {\i\fs24 
+\par }\pard \keepn {\b\fs24 2.2  Non-Government Documents}{\pard\plain \keepn \v\f4 {\tc {\fs24 2.2\tab Non-Government Documents\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par }\pard \fi360\keepn {\fs24 
+The following documents (see Table 2.2-1) of the exact issue shown form a part of this specification to the extent specified herein.  In the event of conflict between the documents referenced herein and the contents of this specification, the contents of 
+this specification shall be considered a superseding requirement.}{\b\fs24 
+\par }\pard \qc {\fs24 
+\par }\pard \qc\keepn\tx6120 {\b\fs24 Table 2.2-1
+\par }\pard \qc\keepn {\b\fs24 Non-Government Documents}{\pard\plain \qc\keepn \v\f4 {\tc {\fs24 2.2-1\tab Non-Government Documents\tcl\tcf116}}}{\fs24 
+\par }\pard \keepn {\fs24 
+\par }\trowd \trgaph108\trleft-108\trkeep \cellx1980\cellx6840\cellx8550 \pard \keepn\intbl {\fs24 Document Number\cell Title\cell Source\cell }\pard \intbl {\fs24 \row }\trowd \trgaph108\trleft-108\trkeep \cellx1980\cellx6840\cellx8550 \pard \keepn\intbl {
+\fs24 \cell \cell \cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl {\fs24 DMA TR 8350.2\cell Department of Defense
+\par World Geodetic System 1984 (WGS 84)
+\par Its Definition and Relationships with Local Geodetic Systems
+\par Defense Mapping Agency Technical Report 8350.2\cell National Technical Information Service\cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl {\fs24 \cell \cell \cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl {\fs24 IEEE 1278.1\cell 
+IEEE Standard P1278.1
+\par Standard for Information Technology - Protocols for Distributed Interactive Simulation Applications
+\par Version 2.0, Third Draft\cell Institute for Simulation and Training\cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl {\fs24 \cell \cell \cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl {\fs24 IST-CR-93-19\cell 
+Enumeration and Bit Encoded Values for Use with Protocols for Distributed Interactive Simulation Applications\cell Institute for Simulation and Training\cell }\pard \intbl {\fs24 \row }\pard \keepn\intbl {\fs24 \cell \cell \cell }\pard \intbl {\fs24 \row 
+}\trowd \trgaph108\trleft-108\trkeep \cellx1980\cellx6840\cellx8550 \pard \keepn\intbl {\fs24 JFT-149-DL.SRM\cell Software Reference Manual for the DIS Library (DL) CSCI 2 of the Ada Distributed Interactive Simulation Support (ADIS) Project\cell 
+J. F .Taylor, Inc.\cell }\pard \intbl {\fs24 \row }\pard \keepn {\fs24 
+\par }\pard \fi360 {\fs24 Technical society and technical associations specifications and standards are generally available for reference from libraries.  They are also distributed among technical groups and using Federal Agencies.
+\par }\pard \tx8910 {\fs24 
+\par }\pard \keepn {\b\fs24 3  Interface Specification}{\pard\plain \keepn \v\f4 {\tc {\fs24 3\tab Interface Specification\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par }\pard \fi360\keepn {\fs24 This section specifies the requirements  for the DL CSCI interface.
+\par }\pard {\b\fs24 
+\par }\pard \keepn {\b\fs24 3.1  Interface Diagram}{\pard\plain \keepn \v\f4 {\tc {\fs24 3.1\tab Interface Diagram\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par }\pard \fi360\keepn {\fs24 Figure 3.1-1 depicts the interface between the DL CSCI defined in this IRS and the other CSCIs in the system.  The interface depicted in this figure is identified by name and project unique identifier.
+\par }\pard {\b\fs24 
+\par }\pard \qc {\fs24 
+\par }\pard {\pard\plain \f4 {\object\objemb\rsltmerge\objw10241\objh5861\objscalex79\objscaley80{\*\objclass MSDraw}{\*\objdata 0105000002000000070000004d5344726177000000000000000000400a0000
+08008e4660280100090000030105000004005a00000000001500000026060f001f00ffffffff0400150000004d7245640f004d6963726f736f6674204472617700005a00000026060f00a9004d72456402009f0000009d000100ffffffffffffffffec00300300c00000030000000000ffffff0000000000ffffff000100
+0001010000000001000100010000180a0009010e0054696d6573204e657720526f6d616e00001100ff000b0003004e00ff00f40003100000000000ffffff00c0c0c00080808000ff00000080000000ffff00008080000000ff00000080000000ffff00008080000000ff0000008000ff00ff0080008000000e0000002606
+0f0012004d724564030008000000140278041412a00d050000000b0278041402050000000c0228090010030000001e000400000003010800050000000102ffffff000500000009020000000004000000070103000400000004010d0004000000060101000400000002010200030000001e0007000000fc02000000000000
+ffff040000002d01000008000000fa0206000000000000000000040000002d0101000b00000026060f000c004d72456401000200000000000a000000240303000e0aa0061f0a5d06320aa0060e00000026060f001200ffffffff00000800000008087804380c68060e00000026060f0012004d7245640300080000001008
+8004300c600607000000fc020000ffffff00ffff040000002d01020004000000f001000008000000fa0206000800080000000000040000002d01000004000000f0010100070000001b046406340c7c040c08040000002e011e00040000000201010015000000fb0290ff0000000000009001000000000000001254696d65
+73204e657720526f6d616e000000040000002d0101000d000000320a4005200a0b0000004449532047617465776179000c000000320a0006200a09000000444720435343492031000a00000026060f000a00ffffffff01000000000007000000fc02000000000000ffff040000002d01030004000000f001020004000000
+0201020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a000000240303000e0ae2071f0a2508320ae20708000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d7245640100
+0200000000000800000025030200200ae807200a95060e00000026060f001200ffffffff0000080000000808e809380ca00d0e00000026060f001200ffffffff0000080000000808b00b380ca00d0e00000026060f0012004d7245640300080000001008b80b300c980d07000000fc020000ffffff00ffff040000002d01
+020004000000f0010300070000001b049c0d340cb40b0c0804000000020101000f000000320a780c200a0f0000004f72646e616e636520536572766572000c000000320a380d200a090000004f5320435343492033000a00000026060f000a00ffffffff01000000000007000000fc02000000000000ffff040000002d01
+030004000000f0010200040000000201020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a000000240303000e0a330a1f0af009320a330a0b00000026060f000c004d72456401000200000000000a000000240303000e0a750b
+1f0ab80b320a750b08000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d72456401000200000000000800000025030200200a780b200a1f0a0a00000026060f000a00ffffffff0100000000000e00000026060f0012004d7245640300080000001c0210083c06f009
+07000000fc020000ffffff00ffff040000002d01020004000000f0010300070000001b04f40940060c08180204000000020101000d000000320ad0082c040b000000444953204c696272617279000c000000320a90092c0409000000444c20435343492032000e00000026060f001200ffffffff0000080000003306e608
+14081a0907000000fc02000000000000ffff040000002d01030004000000f0010200040000000201020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a00000024030300c90712090c080109c907ee080b00000026060f000c00
+4d72456401000200000000000a000000240303007e0612093b0601097e06ee0808000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d7245640100020000000000080000002503020075060009d10700090a00000026060f000a00ffffffff0100000000000e000000
+26060f001200ffffffff000008000000120c08081412f8090e00000026060f001200ffffffff000008000000e40d08081412f8090e00000026060f0012004d724564030008000000ec0d10080c12f00907000000fc020000ffffff00ffff040000002d01020004000000f0010300070000001b04f40910120c08e80d0400
+0000020101000c000000320ad008fc0f0a00000053696d756c6174696f6e0a000000320a9009fc0f060000004d6f64656c730a00000026060f000a00ffffffff0100000000000e00000026060f001200ffffffff000008000000120ce608f30d1a0907000000fc02000000000000ffff040000002d01030004000000f001
+0200040000000201020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a00000024030300a80d1209eb0d0109a80dee080b00000026060f000c004d72456401000200000000000a000000240303005d0c12091a0c01095d0cee08
+08000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d72456401000200000000000800000025030200540c0009b00d00090a00000026060f000a00ffffffff0100000000000a00000026060f000a00ffffffff0100000000000e00000026060f0012004d7245640300
+0800000010081008300cf00907000000fc020000ffffff00ffff040000002d01020004000000f001030008000000fa0201000000000000000000040000002d01030004000000f00100000400000002010100070000001b04f009300c100810080b000000320ac409380a07000000444c2d45492d31000d000000320ac608
+2c0a0c000000444953204c696272617279200c000000320a4a09380a09000000496e746572666163650010000000fb021000070000000000bc02000000000102022253797374656d0006040000002d01000004000000f001010008000000fa02050000000000ffffff00040000002d01010004000000f001030007000000
+fc020100000000000000040000002d01030004000000f0010200040000002701ffff040000002701ffff030000000000187540001870400018007fffe0197ffffa4b7ffff8007ffff80040000315000000000000000000000000000000000000000000000000000001050000050000000d000000
+4d45544146494c4550494354008e460000a0d7ffff280a000008008e4660280000
+0100090000030105000004005a00000000001500000026060f001f00ffffffff0400150000004d7245640f004d6963726f736f6674204472617700005a00000026060f00a9004d72456402009f0000009d000100ffffffffffffffffec00300300c00000030000000000ffffff0000000000ffffff000100000101000000
+0001000100010000180a0009010e0054696d6573204e657720526f6d616e00001100ff000b0003004e00ff00f40003100000000000ffffff00c0c0c00080808000ff00000080000000ffff00008080000000ff00000080000000ffff00008080000000ff0000008000ff00ff0080008000000e00000026060f0012004d72
+4564030008000000140278041412a00d050000000b0278041402050000000c0228090010030000001e000400000003010800050000000102ffffff000500000009020000000004000000070103000400000004010d0004000000060101000400000002010200030000001e0007000000fc02000000000000ffff04000000
+2d01000008000000fa0206000000000000000000040000002d0101000b00000026060f000c004d72456401000200000000000a000000240303000e0aa0061f0a5d06320aa0060e00000026060f001200ffffffff00000800000008087804380c68060e00000026060f0012004d72456403000800000010088004300c6006
+07000000fc020000ffffff00ffff040000002d01020004000000f001000008000000fa0206000800080000000000040000002d01000004000000f0010100070000001b046406340c7c040c08040000002e011e00040000000201010015000000fb0290ff0000000000009001000000000000001254696d6573204e657720
+526f6d616e000000040000002d0101000d000000320a4005200a0b0000004449532047617465776179000c000000320a0006200a09000000444720435343492031000a00000026060f000a00ffffffff01000000000007000000fc02000000000000ffff040000002d01030004000000f001020004000000020102000800
+0000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a000000240303000e0ae2071f0a2508320ae20708000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d7245640100020000000000
+0800000025030200200ae807200a95060e00000026060f001200ffffffff0000080000000808e809380ca00d0e00000026060f001200ffffffff0000080000000808b00b380ca00d0e00000026060f0012004d7245640300080000001008b80b300c980d07000000fc020000ffffff00ffff040000002d01020004000000
+f0010300070000001b049c0d340cb40b0c0804000000020101000f000000320a780c200a0f0000004f72646e616e636520536572766572000c000000320a380d200a090000004f5320435343492033000a00000026060f000a00ffffffff01000000000007000000fc02000000000000ffff040000002d01030004000000
+f0010200040000000201020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a000000240303000e0a330a1f0af009320a330a0b00000026060f000c004d72456401000200000000000a000000240303000e0a750b1f0ab80b320a
+750b08000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d72456401000200000000000800000025030200200a780b200a1f0a0a00000026060f000a00ffffffff0100000000000e00000026060f0012004d7245640300080000001c0210083c06f00907000000fc02
+0000ffffff00ffff040000002d01020004000000f0010300070000001b04f40940060c08180204000000020101000d000000320ad0082c040b000000444953204c696272617279000c000000320a90092c0409000000444c20435343492032000e00000026060f001200ffffffff0000080000003306e60814081a090700
+0000fc02000000000000ffff040000002d01030004000000f0010200040000000201020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a00000024030300c90712090c080109c907ee080b00000026060f000c004d7245640100
+0200000000000a000000240303007e0612093b0601097e06ee0808000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d7245640100020000000000080000002503020075060009d10700090a00000026060f000a00ffffffff0100000000000e00000026060f001200
+ffffffff000008000000120c08081412f8090e00000026060f001200ffffffff000008000000e40d08081412f8090e00000026060f0012004d724564030008000000ec0d10080c12f00907000000fc020000ffffff00ffff040000002d01020004000000f0010300070000001b04f40910120c08e80d0400000002010100
+0c000000320ad008fc0f0a00000053696d756c6174696f6e0a000000320a9009fc0f060000004d6f64656c730a00000026060f000a00ffffffff0100000000000e00000026060f001200ffffffff000008000000120ce608f30d1a0907000000fc02000000000000ffff040000002d01030004000000f001020004000000
+0201020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a00000024030300a80d1209eb0d0109a80dee080b00000026060f000c004d72456401000200000000000a000000240303005d0c12091a0c01095d0cee0808000000fa02
+06000800080000000000040000002d01000004000000f00102000b00000026060f000c004d72456401000200000000000800000025030200540c0009b00d00090a00000026060f000a00ffffffff0100000000000a00000026060f000a00ffffffff0100000000000e00000026060f0012004d7245640300080000001008
+1008300cf00907000000fc020000ffffff00ffff040000002d01020004000000f001030008000000fa0201000000000000000000040000002d01030004000000f00100000400000002010100070000001b04f009300c100810080b000000320ac409380a07000000444c2d45492d31000d000000320ac6082c0a0c000000
+444953204c696272617279200c000000320a4a09380a09000000496e746572666163650010000000fb021000070000000000bc02000000000102022253797374656d0006040000002d01000004000000f001010008000000fa02050000000000ffffff00040000002d01010004000000f001030007000000fc0201000000
+00000000040000002d01030004000000f0010200040000002701ffff040000002701ffff030000000000187540001870400018007fffe0197ffffa4b7ffff8007ffff80040000315}{\result {\fs24 {\pict\wmetafile8\picw18062\pich10336\picwgoal10241\pichgoal5861 \picscalex79\picscaley80 
+0100090000030105000004005a00000000001500000026060f001f00ffffffff0400150000004d7245640f004d6963726f736f6674204472617700005a00000026060f00a9004d72456402009f0000009d000100ffffffffffffffffec00300300c00000030000000000ffffff0000000000ffffff00010000010100000000
+01000100010000180a0009010e0054696d6573204e657720526f6d616e00001100ff000b0003004e00ff00f40003100000000000ffffff00c0c0c00080808000ff00000080000000ffff00008080000000ff00000080000000ffff00008080000000ff0000008000ff00ff0080008000000e00000026060f0012004d724564
+030008000000140278041412a00d050000000b0278041402050000000c0228090010030000001e000400000003010800050000000102ffffff000500000009020000000004000000070103000400000004010d0004000000060101000400000002010200030000001e0007000000fc02000000000000ffff040000002d0100
+0008000000fa0206000000000000000000040000002d0101000b00000026060f000c004d72456401000200000000000a000000240303000e0aa0061f0a5d06320aa0060e00000026060f001200ffffffff00000800000008087804380c68060e00000026060f0012004d72456403000800000010088004300c600607000000
+fc020000ffffff00ffff040000002d01020004000000f001000008000000fa0206000800080000000000040000002d01000004000000f0010100070000001b046406340c7c040c08040000002e011e00040000000201010015000000fb0290ff0000000000009001000000000000001254696d6573204e657720526f6d616e
+000000040000002d0101000d000000320a4005200a0b0000004449532047617465776179000c000000320a0006200a09000000444720435343492031000a00000026060f000a00ffffffff01000000000007000000fc02000000000000ffff040000002d01030004000000f0010200040000000201020008000000fa020600
+0000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a000000240303000e0ae2071f0a2508320ae20708000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d724564010002000000000008000000250302
+00200ae807200a95060e00000026060f001200ffffffff0000080000000808e809380ca00d0e00000026060f001200ffffffff0000080000000808b00b380ca00d0e00000026060f0012004d7245640300080000001008b80b300c980d07000000fc020000ffffff00ffff040000002d01020004000000f001030007000000
+1b049c0d340cb40b0c0804000000020101000f000000320a780c200a0f0000004f72646e616e636520536572766572000c000000320a380d200a090000004f5320435343492033000a00000026060f000a00ffffffff01000000000007000000fc02000000000000ffff040000002d01030004000000f00102000400000002
+01020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a000000240303000e0a330a1f0af009320a330a0b00000026060f000c004d72456401000200000000000a000000240303000e0a750b1f0ab80b320a750b08000000fa020600
+0800080000000000040000002d01000004000000f00102000b00000026060f000c004d72456401000200000000000800000025030200200a780b200a1f0a0a00000026060f000a00ffffffff0100000000000e00000026060f0012004d7245640300080000001c0210083c06f00907000000fc020000ffffff00ffff040000
+002d01020004000000f0010300070000001b04f40940060c08180204000000020101000d000000320ad0082c040b000000444953204c696272617279000c000000320a90092c0409000000444c20435343492032000e00000026060f001200ffffffff0000080000003306e60814081a0907000000fc02000000000000ffff
+040000002d01030004000000f0010200040000000201020008000000fa0206000000000000000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a00000024030300c90712090c080109c907ee080b00000026060f000c004d72456401000200000000000a000000240303
+007e0612093b0601097e06ee0808000000fa0206000800080000000000040000002d01000004000000f00102000b00000026060f000c004d7245640100020000000000080000002503020075060009d10700090a00000026060f000a00ffffffff0100000000000e00000026060f001200ffffffff000008000000120c0808
+1412f8090e00000026060f001200ffffffff000008000000e40d08081412f8090e00000026060f0012004d724564030008000000ec0d10080c12f00907000000fc020000ffffff00ffff040000002d01020004000000f0010300070000001b04f40910120c08e80d04000000020101000c000000320ad008fc0f0a00000053
+696d756c6174696f6e0a000000320a9009fc0f060000004d6f64656c730a00000026060f000a00ffffffff0100000000000e00000026060f001200ffffffff000008000000120ce608f30d1a0907000000fc02000000000000ffff040000002d01030004000000f0010200040000000201020008000000fa02060000000000
+00000000040000002d01020004000000f00100000b00000026060f000c004d72456401000200000000000a00000024030300a80d1209eb0d0109a80dee080b00000026060f000c004d72456401000200000000000a000000240303005d0c12091a0c01095d0cee0808000000fa0206000800080000000000040000002d0100
+0004000000f00102000b00000026060f000c004d72456401000200000000000800000025030200540c0009b00d00090a00000026060f000a00ffffffff0100000000000a00000026060f000a00ffffffff0100000000000e00000026060f0012004d72456403000800000010081008300cf00907000000fc020000ffffff00
+ffff040000002d01020004000000f001030008000000fa0201000000000000000000040000002d01030004000000f00100000400000002010100070000001b04f009300c100810080b000000320ac409380a07000000444c2d45492d31000d000000320ac6082c0a0c000000444953204c696272617279200c000000320a4a
+09380a09000000496e746572666163650010000000fb021000070000000000bc02000000000102022253797374656d0006040000002d01000004000000f001010008000000fa02050000000000ffffff00040000002d01010004000000f001030007000000fc020100000000000000040000002d01030004000000f0010200
+040000002701ffff040000002701ffff030000000000187540001870400018007fffe0197ffffa4b7ffff8007ffff80040000315}}}}}{\fs24 
+\par 
+\par }\pard \qc {\b\fs24 Figure 3.1-1
+\par }{\fs24  }{\b\fs24 DL CSCI Interface Diagram}{\pard\plain \qc \v\f4 {\tc {\fs24 3.1-1\tab DL CSCI Interface Diagram\tcl\tcf102}}}{\fs24 
+\par }\pard {\b\fs24 
+\par 
+\par 3.2  DIS Library Interface (DL-EI-1) }{\pard\plain \v\f4 {\tc {\fs24 3.2\tab DIS Library Interface (DL-EI-1)\tcl}}}{\fs24  
+\par 
+\par The purpose for the DIS Library interface (DL-EI-1) is to provide access to the software routines in the DIS library.
+\par 
+\par }{\b\fs24 3.2.1 DL Interface Requirements}{\pard\plain \v\f4 {\tc {\fs24 3.2.1\tab Interface Requirements\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par There are no interface requirements associated with the DL CSCI.
+\par }{\b\fs24 
+\par 3.2.2  Data Requirements}{\pard\plain \v\f4 {\tc {\fs24 3.2.2\tab Data Requirements\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par The data requirements for the DL interface are documented in the DL Software Reference Manual in Chapter 3.
+\par }{\b\fs24 4  Quality Assurance}{\pard\plain \v\f4 {\tc {\fs24 4\tab Quality Assurance\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par This paragraph is not applicable to the DL CSCI.
+\par }{\b\fs24 
+\par 5  Preparation for Delivery}{\pard\plain \v\f4 {\tc {\fs24 5\tab Preparation for Delivery\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par This paragraph is not applicable to the DL CSCI.
+\par 
+\par }\pard \keepn {\b\fs24 6  Notes}{\pard\plain \keepn \v\f4 {\tc {\fs24 6\tab Notes\tcl}}}{\b\fs24 
+\par }{\fs24 
+\par The following subparagraphs contain general information to assist in understanding this specification, such as word usage, meanings of acronyms and abbreviations, and project unique identifiers.
+\par }\pard {\fs24 
+\par }\pard \keepn {\b\fs24 6.1  Word Usage}{\pard\plain \keepn \v\f4 {\tc {\fs24 6.1\tab Word Usage\tcl}}}{\fs24 
+\par 
+\par This System Requirements Specification adheres to the following word usage for paragraphs 1 through 6:
+\par 
+\par }\pard \li720\keepn {\i\fs24 Shall}{\fs24   has been used only where a particular feature, capability, or method of operation is mandatory.
+\par 
+\par }{\i\fs24 Should}{\fs24  has been used only where a particular feature, capability, or method of operation is recommended.
+\par 
+\par }{\i\fs24 May}{\fs24  has been used only where a particular feature, capability, or method of operation is optimal or to suggest a possible design approach to a requirement.
+\par 
+\par }{\i\fs24 Will}{\fs24  has been used to indicate futurity, never to indicate any degree of requirement.
+\par }\pard {\fs24 
+\par }\pard \keepn {\b\fs24 6.2  Acronyms and Abbreviations}{\pard\plain \keepn \v\f4 {\tc {\fs24 6.2\tab Acronyms and Abbreviations\tcl}}}{\fs24 
+\par 
+\par Table 6.2-1 contains a list of all acronyms and abbreviations used in this IRS and their meanings as used in this document.
+\par 
+\par }\pard \qc\keepn {\b\fs24 Table 6.2-1
+\par Meanings of Acronyms and Abbreviations}{\pard\plain \qc\keepn \v\f4 {\tc {\fs24 6.2-1\tab Meanings of Acronyms and Abbreviations\tcl\tcf116}}}{\fs24 
+\par }\pard \keepn {\fs24 
+\par }\trowd \trqc\trgaph108\trleft27\trkeep \clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx1719\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx7260 \pard \qc\keepn\intbl {\b\fs24 Acronym/
+\par Abbreviation\cell Meaning\cell }\pard \intbl {\b\fs24 \row }\trowd \trqc\trgaph108\trleft27\trkeep \clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx1719\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrb
+\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx7260 \pard \keepn\intbl {\fs24 ADIS\cell Ada Distributed Interactive Simulation\cell }\pard \intbl {\fs24 \row }\trowd \trqc\trgaph108\trleft27\trkeep \clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw30 \clbrdrb
+\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx1719\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx7260 \pard \keepn\intbl {\fs24 CDRL\cell Contract Data Requirements List\cell }\pard \intbl {\fs24 \row 
+}\pard \intbl {\fs24 CSCI\cell Computer Software Configuration Item\cell }\pard \intbl {\fs24 \row }\pard \intbl {\fs24 DG\cell DIS Gateway\cell }\pard \intbl {\fs24 \row }\pard \intbl {\fs24 DIS\cell Distributed Interactive Simulation\cell }\pard \intbl 
+{\fs24 \row }\pard \intbl {\fs24 DOD\cell Department of Defense\cell }\pard \intbl {\fs24 \row }\pard \intbl {\fs24 IEEE\cell Institute of Electrical and Electronics Engineers\cell }\pard \intbl {\fs24 \row }\pard \intbl {\fs24 IRS\cell 
+Interface Requirements Specification\cell }\pard \intbl {\fs24 \row }\pard \intbl {\fs24 N/A\cell Not Applicable\cell }\pard \intbl {\fs24 \row }\pard \intbl {\fs24 NAWCAD\cell Naval Air Warfare Center, Aircraft Division\cell }\pard \intbl {\fs24 \row 
+}\pard \intbl {\fs24 OS\cell Ordnance Server\cell }\pard \intbl {\fs24 \row }\pard \intbl {\fs24 PDU\cell Protocol Data Unit\cell }\pard \intbl {\fs24 \row }\trowd \trqc\trgaph108\trleft27\trkeep \clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw30 \clbrdrb
+\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx1719\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw30 \cellx7260 \pard \intbl {\fs24 SETD\cell Systems Engineering Test Directorate\cell }\pard \intbl {\fs24 \row 
+}\pard {\fs24 
+\par }\pard \keepn {\b\fs24 6.3  Project Unique Identifiers}{\pard\plain \keepn \v\f4 {\tc {\fs24 6.3\tab Project Unique Identifiers\tcl}}}{\fs24 
+\par 
+\par Table 6.3-1 contains a list of all project unique identifiers used in the ADIS system and their associated meanings.
+\par }\pard \qc\keepn {\b\fs24 Table 6.3-1
+\par Project Unique Identifiers}{\pard\plain \qc\keepn \v\f4 {\tc {\fs24 6.3-1\tab Project Unique Identifiers\tcl\tcf116}}}{\fs24 
+\par }\pard \keepn {\fs24 
+\par }\trowd \trqc\trgaph108\trleft27\trkeep \clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx2979\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx8055 \pard \qc\keepn\intbl {\b\fs24 Project Unique Identifier
+\cell Meaning\cell }\pard \intbl {\b\fs24 \row }\trowd \trqc\trgaph108\trleft27\trkeep \clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx2979\clbrdrt\brdrs\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrb
+\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx8055 \pard \li810\intbl {\i\fs24 csci}{\fs24 -C-nn \cell }\pard \intbl {\fs24 Capability nn of the specified CSCI\cell }\pard \intbl {\fs24 \row }\trowd \trqc\trgaph108\trleft27\trkeep \clbrdrt\brdrs\brdrw15 
+\clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx2979\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw30 \cellx8055 \pard \li810\intbl {\i\fs24 csci}{\fs24 -D-nn\cell }\pard \intbl {\fs24 
+Data element nn of the specified CSCI\cell }\pard \intbl {\fs24 \row }\pard \li810\intbl {\i\fs24 csci}{\fs24 -II-nn\cell }\pard \intbl {\fs24 Internal Interface nn of the specified CSCI\cell }\pard \intbl {\fs24 \row }\pard \li810\intbl {\i\fs24 csci}{
+\fs24 -EI-nn\cell }\pard \intbl {\fs24 External Interface nn of the specified CSCI\cell }\pard \intbl {\fs24 \row }\trowd \trqc\trgaph108\trleft27\trkeep \clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw30 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw15 
+\cellx2979\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw30 \clbrdrr\brdrs\brdrw30 \cellx8055 \pard \li810\intbl {\i\fs24 csci}{\fs24 -R-nn\cell }\pard \intbl {\fs24 Requirement nn of the specified CSCI\cell }\pard \intbl {\fs24 \row 
+}\pard {\fs24 
+\par }\pard \qc {\fs24 \sect }\sectd \linex0\endnhere\titlepg \pard\plain \qc \f4\fs20 {\fs22 JFT-145-DL.IRS-V1, 30 Sept-94
+\par Rev B, 30-Sept-94
+\par }{\fs24 
+\par 
+\par 
+\par INTERFACE REQUIREMENTS SPECIFICATION 
+\par 
+\par FOR THE
+\par 
+\par DIS LIBRARY (DL) CSCI 2
+\par 
+\par OF THE
+\par 
+\par ADA DISTRIBUTED INTERACTIVE SIMULATION (ADIS) PROJECT
+\par }{\i\fs24 
+\par }{\fs24 CONTRACT NO.  N00421-92-D-0028
+\par 
+\par CDRL SEQUENCE NO. A007
+\par }{\i\fs24 
+\par 
+\par 
+\par }{\fs24 Prepared for:
+\par 
+\par Naval Air Warfare Center, Aircraft Division
+\par Flight Test and Engineering Group
+\par 
+\par Prepared by:
+\par 
+\par J. F. Taylor, Inc.
+\par Rt. 235 and Maple Rd.
+\par Lexington Park, MD  20653
+\par }\pard {\i\fs24 
+\par 
+\par 
+\par }\trowd \trgaph108\trleft-108\trkeep \clbrdrt\brdrdb\brdrw30 \clbrdrl\brdrdb\brdrw30 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrs\brdrw15 \cellx4212\clbrdrt\brdrdb\brdrw30 \clbrdrl\brdrs\brdrw15 \clbrdrb\brdrs\brdrw15 \clbrdrr\brdrdb\brdrw30 \cellx8532 \pard 
+\qc\intbl {\i\fs24 Authenticated by:
+\par 
+\par 
+\par 
+\par (Contracting Agency)\cell Approved by:
+\par 
+\par 
+\par 
+\par (Contractor)\cell }\pard \intbl {\i\fs24 \row }\trowd \trgaph108\trleft-108\trkeep \clbrdrt\brdrs\brdrw15 \clbrdrl\brdrdb\brdrw30 \clbrdrb\brdrdb\brdrw30 \clbrdrr\brdrs\brdrw15 \cellx4212\clbrdrt\brdrs\brdrw15 \clbrdrl\brdrs\brdrw15 \clbrdrb
+\brdrdb\brdrw30 \clbrdrr\brdrdb\brdrw30 \cellx8532 \pard \qc\intbl {\i\fs24 
+\par 
+\par (Date)\cell 
+\par 
+\par (Date)\cell }\pard \intbl {\i\fs24 \row }\pard \qc {\b\i\fs24 \sect }\sectd \pgnrestart\pgnstarts2\pgnlcrm\linex0\endnhere {\header \pard\plain \s35\qc\brdrb\brdrs\brdrw15\brsp20 \tqc\tx4320\tqr\tx8640 \f4\fs20 {\i JFT-145-DL.IRS-V1, Rev. B, 30-Sept-94
+
+\par }\pard \s35\tqc\tx4320\tqr\tx8640  
+\par }{\footer \pard\plain \s34\qc\tqc\tx4320\tqr\tx8640 \f4\fs20 {\field\flddirty{\*\fldinst PAGE}{\fldrslt ii}}
+\par }\pard\plain \qc \f4\fs20 {\b\fs24 Table of Contents
+\par }\pard {\fs24 
+\par }\pard\plain \s24\ri720\tx900\tqr\tldot\tx8640 \f4\fs20 {\field\flddirty{\*\fldinst {\fs24 toc \\f}}{\fldrslt {\fs24 1\tab Scope\tab 1
+\par 1.1\tab Identification\tab 1
+\par 1.2\tab System Overview\tab 1
+\par 1.2.1\tab DIS Library Interface (DL-EI-1)\tab 1
+\par 1.3\tab Document Overview\tab 2
+\par 2.0\tab Applicable Documents\tab 2
+\par 2.1\tab Government Documents\tab 2
+\par 2.2\tab Non-Government Documents\tab 2
+\par 3\tab Interface Specification\tab 3
+\par 3.1\tab Interface Diagram\tab 3
+\par 3.2\tab DIS Library Interface (DL-EI-1)\tab 4
+\par 3.2.1\tab Interface Requirements\tab 4
+\par 3.2.2\tab Data Requirements\tab 4
+\par 4\tab Quality Assurance\tab 4
+\par 5\tab Preparation for Delivery\tab 4
+\par 6\tab Notes\tab 5
+\par 6.1\tab Word Usage\tab 5
+\par 6.2\tab Acronyms and Abbreviations\tab 5
+\par 6.3\tab Project Unique Identifiers\tab 6
+\par }}}\pard\plain \s24\ri720\tx900\tqr\tldot\tx8640 \f4\fs20 {\fs24 
+\par }\pard\plain \qc \f4\fs20 {\b\fs24 Figures
+\par }\pard {\fs24 
+\par }\pard\plain \s24\ri720\tx900\tqr\tldot\tx8640 \f4\fs20 {\field\flddirty{\*\fldinst {\fs24 toc \\f f }}{\fldrslt {\fs24 3.1-1\tab DL CSCI Interface Diagram\tab 4
+\par }}}\pard\plain \s24\ri720\tx900\tqr\tldot\tx8640 \f4\fs20 {\fs24 
+\par }\pard\plain \f4\fs20 {\fs24 
+\par 
+\par }\pard \qc {\b\fs24 Tables
+\par }\pard {\fs24 
+\par }\pard\plain \s24\ri720\tx900\tqr\tldot\tx8640 \f4\fs20 {\field\flddirty{\*\fldinst {\fs24 toc \\f t }}{\fldrslt {\fs24 1.1-1\tab DL Interfaces\tab 1
+\par 2.1-1\tab Government Documents\tab 2
+\par 2.2-1\tab Non-Government Documents\tab 3
+\par 6.2-1\tab Meanings of Acronyms and Abbreviations\tab 5
+\par 6.3-1\tab Project Unique Identifiers\tab 6
+\par }}}\pard\plain \s24\ri720\tx900\tqr\tldot\tx8640 \f4\fs20 {\fs24 
+\par }}

@@ -1,0 +1,4 @@
+msword/
+ps/
+rtf/
+txt/

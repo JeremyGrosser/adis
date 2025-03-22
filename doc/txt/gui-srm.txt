@@ -1,0 +1,1413 @@
+
+
+
+
+
+
+                                  JFT-145-1-GUI.SRM
+
+                                   30-September-94
+
+
+                              SOFTWARE REFERENCE MANUAL
+
+                                       FOR THE
+
+                           GRAPHICAL USER INTERFACE (GUI)
+
+                                       OF THE
+
+            ADA DISTRIBUTED INTERACTIVE SIMULATION (ADIS) SUPPORT SYSTEM
+
+                           CONTRACT NO.  N00421-92-D-0028
+
+                               CDRL SEQUENCE NO:  A009
+
+
+
+                                    Prepared for:
+
+                Naval Air Warfare Center, Aircraft Division (NAWCAD)
+                     Systems Engineering Test Directorate (SETD)
+                            Manned Flight Simulator (MFS)
+
+
+                                    Prepared by:
+
+                                 J. F. Taylor, Inc.
+                                Rt. 235 and Maple Rd.
+                              Lexington Park, MD  20653
+
+
+
+
+               Authenticated by:                Approved by:
+
+
+
+              (Contracting Agency)              (Contractor)
+
+
+
+                     (Date)                        (Date)
+
+
+                       JFT-145-GUI.SRM-V1, Rev. B, 30-Sept-94
+
+
+                                  TABLE OF CONTENTS                                  TABLE OF CONTENTS                                  TABLE OF CONTENTS
+
+          What is the ADIS GUI?          What is the ADIS GUI?          What is the ADIS GUI?................................    1                                                               ....
+               What is needed to use the ADIS GUI?               What is needed to use the ADIS GUI?               What is needed to use the ADIS GUI?.................1
+               What do you need to know to use the ADIS GUI?               What do you need to know to use the ADIS GUI?               What do you need to know to use the ADIS GUI?       1                                                            .......
+          How does the ADIS GUI work?          How does the ADIS GUI work?          How does the ADIS GUI work?..............................1
+               XDG Server               XDG Server               XDG Server..........................................1
+               XDG Client               XDG Client               XDG Client..........................................2
+                  ................................               XOS               XOS               XOS                                .................2
+               Special Features               Special Features               Special Features....................................2
+               How do you bring up the ADIS GUI?               How do you bring up the ADIS GUI?               How do you bring up the ADIS GUI?...................2
+               How do you configure the ADIS GUI?               How do you configure the ADIS GUI?               How do you configure the ADIS GUI?..................3
+               How do you control the ADIS GUI?               How do you control the ADIS GUI?               How do you control the ADIS GUI?....................3
+          What does each unit in the ADIS GUI do?          What does each unit in the ADIS GUI do?          What does each unit in the ADIS GUI do?..................3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                         ii
+
+
+
+
+
+          What is the ADIS GUI?          What is the ADIS GUI?          What is the ADIS GUI?
+            The ADIS GUI provides the DIS Gateway (DG) and the Ordnance
+          Server (OS) with graphical user interfaces which are consistent
+          and easy to use. These graphical user interfaces are written
+          using the X Window System version X11R5 with Motif 1.2.
+
+
+          What is needed to use the ADIS GUI?          What is needed to use the ADIS GUI?          What is needed to use the ADIS GUI?
+            The ADIS GUI was developed on a Silicon Graphics Indigo R4000
+          running IRIX 5.2.  The ADIS GUI code compiles using Verdix Ada
+          Compiler 6.2.1 and the X Window System version X11R5 with Motif
+          1.2.  Therefore, this documentation assumes you have a working
+          knowledge of Ada, the X Window System, and Motif.  Three separate
+          ADIS GUI executables exist, one each for the DG Server, the DG
+          Client, and the OS. The DG Server GUI (XDGS) allows the user to
+          configure and control the DG Server. The DG Client GUI (XDGC)
+          allows the user to configure and control the DG Client. The OS
+          GUI (XOS) allows the user to configure and control the OS.
+
+
+          What do you need to know to use the ADIS GUI?          What do you need to know to use the ADIS GUI?          What do you need to know to use the ADIS GUI?
+            A working knowledge of graphical user interfaces is necessary
+          to use the ADIS GUIs. In particular, the user must understand the
+          basics of using an application whose interface is based on the X
+          Window System.
+
+
+          How does the ADIS GUI work?          How does the ADIS GUI work?          How does the ADIS GUI work?
+            The user may open or save configuration files by selecting the
+          appropriate option from the ``                                       File'' menu. You can quit the ADIS
+          GUI application by selecting the ``                                            Quit'' menu item from the
+          ``           File'' menu.
+            XDG_Server            XDG_Server            XDG_Server
+            The user may shut down the DG Server and quit the XDG_Server
+          GUI application by selecting the ``                                            Shutdown Server'' menu item
+          from the ``                    File'' menu.
+            The ``XDG Server'' menu contains three items: ``                                                           Set
+          Parameters,''                       ``Monitors,'' and ``Error Notices.''
+            When the user selects the ``Set Parameters'' menu item from the
+          ``           XDG Server'' menu, the ``XDG Server Set Parameters'' window is
+          displayed. A list of buttons on the left side of this window
+          allows the user to select groups of parameters that may be
+          changed. When one of these buttons is pressed, a panel of data
+          entry fields and option menus (as appropriate for the parameters
+          being displayed) appears on the right side of this window. When
+          the mouse cursor is positioned over any data entry field or
+          option menu, help for that item will be displayed in the field
+          labeled ``                   Help'': at the bottom of the screen. Typing a new value
+          into a data entry field or selecting an item from an option menu
+          will change that value in the DG Server when the ``                                                            Apply'' button
+          is pressed. Pressing the button labeled ``                                                   Apply'' at the bottom
+          right of the window will send the values of all changed
+          parameters to the DG Server. Pressing the button labeled
+          ``           Cancel'' at the bottom left of the window will abort all
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+          changes (the fields will hold their values) and close this
+          window.
+            When the user selects the ``Monitors'' menu item from the  XDG                                                                      ``
+                  menu, the                 ''          Server            ``XDG Server Monitors'' window is displayed.
+          The setup of this window is very similar to that of the  XDG                                                                  ``
+          Server Set Parameters  window described above, except that the                               ''
+          data displayed may not be edited; it is for viewing only.
+            When the user selects the ``Error Notices   menu item from the                                                     ''
+          ``           XDG Server   menu, the                      ''             XDG Server Error Notices Monitor                                  ``                                ''
+          window is displayed. This window displays all DG Server errors
+          with the time of the occurrence of each error. The user can
+          scroll back to see previous errors, and the display will
+          automatically display new errors as they occur.
+            XDG_Client            XDG_Client            XDG_Client
+            The operation of the XDG_Client GUI application is nearly
+          identical to that of the XDG_Server GUI application. Please refer
+          to the section describing the operation of the XDG_Client GUI
+          application above and note the following exceptions.
+            The XDG_Client GUI application does not contain the option
+           Shutdown Server          ``                 under the                           ''           ``       menu. The                                              ''                                         File              XDG Client Set                                                          ``
+          Parameters  window of the XDG_Client GUI application contains                    ''
+          different panels than that of the XDG_Server GUI application, but
+          they operate identically.
+            XOS            XOS            XOS
+            The operation of the XOS GUI application is nearly identical
+          to that of the XDG_Server GUI application. Please refer to the
+          section describing the operation of the XDG_Client GUI
+          application above, with the following exceptions.
+            The XOS GUI application XDG_Client GUI application contains
+          several windows used to set parameters. These include  XOS Set                                                                ``
+          Simulation Parameters,"  XOS Set Ordnance Parameters," and                                   ``                                 ``XOS
+          Set General Parameters.''                                   The windows of the XOS GUI application
+          used to set parameters contain different panels than the ``                                                                    Set
+          Parameters''                      window of the XDG_Server GUI application, but they
+          operate identically, with one major exception. The ``                                                              XOS Set
+          Ordnance Parameters''                               window contains two new buttons at the
+          bottom center of the window, labeled  Previous                                               ``          and                                                         ''       Next."                                                               ``
+          The buttons allow the user to navigate through the munitions list
+          and to display and edit parameters for all munitions in the
+          munitions list.
+
+
+          Special Features          Special Features          Special Features
+            The ADIS GUI attempts to prevent the user from entering
+          invalid values in the input data fields by restricting the input
+          to fit the appropriate type. For example, the user can only enter
+          valid integers in an integer data field.
+            Each data field of the ADIS GUI displays context sensitive
+          help in a special  Help                            ``   '' field at the bottom of each window
+          whenever the mouse cursor is positioned over the data field.
+
+
+          How do you bring up the ADIS GUI?          How do you bring up the ADIS GUI?          How do you bring up the ADIS GUI?
+
+
+
+                                          2
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            The XDG Server GUI is executed by typing ``XDG_Server   at the                                                                 ''
+          command prompt, assuming that the user is in the directory in
+          which the XDG_Server application is located.
+            The XDG Client GUI is automatically executed by the DG; the
+          user does not manually execute the XDG Client GUI application.
+            The XOS GUI is automatically executed by the OS; the user does
+          not manually execute the XOS GUI application.
+          How do you configure the ADIS GUI?          How do you configure the ADIS GUI?          How do you configure the ADIS GUI?
+            Please refer to the DG SRM and the OS SRM for information on
+          how to configure the appropriate ADIS GUI.
+
+
+          How do you control the ADIS GUI?          How do you control the ADIS GUI?          How do you control the ADIS GUI?
+            Please refer to the above section entitled   How does the ADIS                                                       ``
+                   ''          GUI work?  to learn how to control the ADIS GUI.
+
+
+          What does each unit in the ADIS GUI do?          What does each unit in the ADIS GUI do?          What does each unit in the ADIS GUI do?
+          Below is a break down of the ADIS GUIs into their respective
+          packages and units. The package name (with the filename of its
+          spec and body, and with the purpose of the package) is given
+          first. The     ''                      (_)                     ``     indicates a spec and body both exist; the spec
+          filename uses an underscore and the body does not. In the event
+          that only a spec or body exists, its filename will be listed with
+          or without the underscore as appropriate. Following the package
+          information, the filename of each unit within the package, as
+          well as its purpose, is included.
+
+          Utilities          Utilities          Utilities
+                                                           Utilities(_).ada
+            The Utilities package holds frequently used, general-purpose,
+            units. These units perform conversions and other manipulations
+            on strings and simple data types.
+            Min            Min            Min
+                                                              Utilities.ada
+               This function returns the minimum of the two passed values.
+            Max            Max            Max
+                                                              Utilities.ada
+               This function returns the maximum of the two passed values.
+            String_To_Float_String            String_To_Float_String            String_To_Float_String
+                                       Utilities_String_To_Float_String.ada
+               This procedure converts the string passed in and ensures
+               that is in a properly formatted float format.
+            String_To_Integer_String            String_To_Integer_String            String_To_Integer_String
+                                     Utilities_String_To_Integer_String.ada
+               This procedure converts the string passed in and ensures
+               that is in a properly formatted integer format.
+            String_To_Hexadecimal_String            String_To_Hexadecimal_String            String_To_Hexadecimal_String
+                                 Utilities_String_To_Hexadecimal_String.ada
+               This procedure converts the string passed in and ensures
+               that it is in a properly formatted hexadecimal format.
+            String_To_Binary_String            String_To_Binary_String            String_To_Binary_String
+                                      Utilities_String_To_Binary_String.ada
+
+
+
+                                          3
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+               This procedure converts the string passed in and ensures
+               that it is in a properly formatted binary format.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          4
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Length_Of_String            Length_Of_String            Length_Of_String
+                                             Utilities_Length_Of_String.ada
+               This procedure returns the number of characters in the
+               passed string until the character ASCII.NUL is reached. This
+               is useful since strings are null-terminated in X.
+            Get_Integer_From_Text            Get_Integer_From_Text            Get_Integer_From_Text
+                                        Utilities_Get_Integer_From_Text.ada
+               This procedure returns the integer equivalent of the passed
+               text. A BOOLEAN True is returned in Success if the procedure
+               can extract an integer, and False is returned if it fails
+               (i.e., the text string is null, empty, or contains an
+               invalid integer string.)
+            Get_Float_From_Text            Get_Float_From_Text            Get_Float_From_Text
+                                          Utilities_Get_Float_From_Text.ada
+               This procedure returns the float equivalent of the passed
+               text. A BOOLEAN True is returned in Success if the procedure
+               can extract a float, and False is returned if it fails
+               (i.e., the text string is null, empty, or contains an
+               invalid float string.)
+            Get_Hexadecimal_From_Text            Get_Hexadecimal_From_Text            Get_Hexadecimal_From_Text
+                                    Utilities_Get_Hexadecimal_From_Text.ada
+               This procedure returns the integer equivalent of the passed
+               hexadecimal string text. A BOOLEAN True is returned in
+               Success if the procedure can extract an integer, and False
+               is returned if it fails (i.e., the text string is null,
+               empty, or contains an invalid hexadecimal string.)
+            Get_Binary_From_Text            Get_Binary_From_Text            Get_Binary_From_Text
+                                         Utilities_Get_Binary_From_Text.ada
+               This procedure returns the integer equivalent of the passed
+               binary string text. A BOOLEAN True is returned in Success if
+               the procedure can extract an integer, and False is returned
+               if it fails (i.e., the text string is null, empty, or
+               contains an invalid binary string.)
+            Integer_To_String            Integer_To_String            Integer_To_String
+                                            Utilities_Integer_To_String.ada
+               This procedure converts the passed INTEGER into its string
+               equivalent, returning it in the passed STRING parameter.
+            Float_To_String            Float_To_String            Float_To_String
+                                              Utilities_Float_To_String.ada
+               This procedure converts the passed FLOAT into its string
+               equivalent, returning it in the passed STRING parameter.
+            Hexadecimal_To_String            Hexadecimal_To_String            Hexadecimal_To_String
+                                        Utilities_Hexadecimal_To_String.ada
+               This procedure converts the passed INTEGER into its
+               hexadecimal string equivalent, returning it in the passed
+               STRING parameter.
+            Binary_To_String            Binary_To_String            Binary_To_String
+                                             Utilities_Binary_To_String.ada
+               This procedure converts the passed INTEGER into its binary
+               string equivalent, returning it in the passed STRING
+               parameter.
+
+
+
+
+
+                                          5
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Strip_Spaces            Strip_Spaces            Strip_Spaces
+                                                 Utilities_Strip_Spaces.ada
+               This procedure strips all leading and trailing spaces from
+               the passed string. The non-space portions of the string are
+               moved forward to replace any leading spaces, and trailing
+               spaces are replaced with ASCII.NUL characters.
+            Time_To_String            Time_To_String            Time_To_String
+                                               Utilities_Time_To_String.ada
+               This procedure converts a variable of type Calendar.TIME
+               into its STRING equivalent, with the hours, minutes, and
+               seconds padded with zeroes.
+
+
+
+          Motif_Utilities          Motif_Utilities          Motif_Utilities
+                                                     Motif_Utilities(_).ada
+            The Motif_Utilities package holds frequently used Motif and X
+            related units. These units perform such functions as creating
+            common widgets, getting widget ancestors, setting common
+            widget resources, getting formatted data from text widgets,
+            restricting text widget input to match integer and float
+            types, prompting/informing the user, building menu items and
+            menus, and installing and updating ActiveHelp.
+            Create_Label            Create_Label            Create_Label
+                                                        Motif_Utilities.ada
+               This function creates a label with the passed label parented
+               to the passed parent.
+            Create_Pushbutton            Create_Pushbutton            Create_Pushbutton
+                                                        Motif_Utilities.ada
+               This function creates a pushbutton with the passed label
+               parented to the passed parent.
+            Create_Togglebutton            Create_Togglebutton            Create_Togglebutton
+                                                        Motif_Utilities.ada
+               This function creates a togglebutton with the passed label
+               parented to the passed parent.
+            Get_Shell            Get_Shell            Get_Shell
+                                                        Motif_Utilities.ada
+               This function returns the first shell parent of the passed
+               widget.
+            Get_Topshell            Get_Topshell            Get_Topshell
+                                                        Motif_Utilities.ada
+               This function returns the first WMshell parent of the passed
+               widget.
+            Display_Message            Display_Message            Display_Message
+                                                        Motif_Utilities.ada
+               This procedure creates a dialog displaying the passed
+               message, with the passed title. Pressing the dialog's only
+               button unmanages it.
+            Set_Cursor            Set_Cursor            Set_Cursor
+                                                        Motif_Utilities.ada
+               This procedure sets the cursor of the window of the passed
+               widget to the passed cursor id.
+            Set_Labelstring            Set_Labelstring            Set_Labelstring
+                                                        Motif_Utilities.ada
+
+
+                                          6
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+               This procedure sets the labelString resource of the passed
+               widget to the passed string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          7
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Get_Labelstring            Get_Labelstring            Get_Labelstring
+                                                        Motif_Utilities.ada
+               This function returns the label string of the passed widget
+               as a text string.
+            Make_Color            Make_Color            Make_Color
+                                                        Motif_Utilities.ada
+               This function returns the pixel colormap entry associated
+               with the color color_name in the widget parent, allocating
+               it if necessary. The returned value Pixel can be used to set
+               the XmNbackground and XmNforeground widget resources.
+            Prompt_User            Prompt_User            Prompt_User
+                                                        Motif_Utilities.ada
+               This function presents the user with a prompt and allows you
+               to choose one of up to three choices (from input
+               parameters). The chosen response's mnemonic is returned.
+            Build_Menu            Build_Menu            Build_Menu
+                                                        Motif_Utilities.ada
+               This function builds a menu based on the passed array of
+               MENU_ITEM_REC variables, parented to the passed widget
+               parent. The array of MENU_ITEM_REC variables defines the
+               menu type (standard menu, option menu, or popup menu) as
+               well as all menu items and their attributes.
+            Build_Menu_Item            Build_Menu_Item            Build_Menu_Item
+                                                        Motif_Utilities.ada
+               This function assembles a MENU_ITEM_REC from a list of
+               parameters. This is an optional convenience function. The
+               created MENU_ITEM_REC  variable can then be used to
+               construct an array of MENU_ITEM_REC variables for use in the
+               call to Build_Menu (see above).
+            Install_Active_Help            Install_Active_Help            Install_Active_Help
+                                    Motif_Utilities_Install_Active_Help.ada
+               This procedure installs active help for the specified
+               widget. This requires that a text field be dedicated to the
+               purpose of displaying the ActiveHelp messages.
+            Update_Help_Field_EH            Update_Help_Field_EH            Update_Help_Field_EH
+                                   Motif_Utilities_Update_Help_Field_EH.ada
+               This event handler updates the text widget passed into
+               Help_Text_Widget with the string held in the User_Data field
+               of the callback's parent widget. It is automatically
+               installed by the call to Install_Active_Help.
+            Install_Text_Restrictions            Install_Text_Restrictions            Install_Text_Restrictions
+                              Motif_Utilities_Install_Text_Restrictions.ada
+               This unit installs textfield callbacks which restrict the
+               passed textfield widget to only accept as valid input text
+               matching the passed criteria.
+            Install_Text_Restrictions_With_Integer_Range            Install_Text_Restrictions_With_Integer_Range            Install_Text_Restrictions_With_Integer_Range
+                                                           Motif_Utilities-
+                          _Install_Text_Restrictions_With_Integer_Range.ada
+               This unit installs textfield callbacks which restrict the
+               passed text widget to only accept as valid input text
+               matching the passed criteria, including a range of valid
+               integer values.
+            Install_Text_Restrictions_With_Float_Range            Install_Text_Restrictions_With_Float_Range            Install_Text_Restrictions_With_Float_Range
+                 Motif_Utilities_Install_Text_Restrictions_With_Float_Range
+
+
+                                          8
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+               This unit installs textfield callbacks which restrict the
+               passed text widget to only accept as valid input text
+               matching the passed criteria, including a range of valid
+               float values.
+            Get_Integer_From_Text_Widget            Get_Integer_From_Text_Widget            Get_Integer_From_Text_Widget
+                           Motif_Utilities_Get_Integer_From_Text_Widget.ada
+               This procedure returns the integer equivalent of the text
+               contained in the passed text widget, via the passed
+               parameter Return_Integer. A BOOLEAN True is returned in
+               Success if the procedure can extract an integer, and False
+               is returned if it fails (i.e., the text widget is null,
+               empty, or contains an invalid integer string.)
+            Get_Float_From_Text_Widget            Get_Float_From_Text_Widget            Get_Float_From_Text_Widget
+                             Motif_Utilities_Get_Float_From_Text_Widget.ada
+               This procedure returns the float equivalent of the text
+               contained in the passed text widget, via the passed
+               parameter Return_Float. A BOOLEAN True is returned in
+               Success if the procedure can extract a float, and False is
+               returned if it fails (i.e., the text widget is null, empty,
+               or contains an invalid float string.)
+            Get_Hexadecimal_From_Text_Widget            Get_Hexadecimal_From_Text_Widget            Get_Hexadecimal_From_Text_Widget
+                       Motif_Utilities_Get_Hexadecimal_From_Text_Widget.ada
+               This procedure returns the integer equivalent of the
+               hexadecimal text contained in the passed text widget, via
+               the passed parameter Return_Integer. A BOOLEAN True is
+               returned in Success if the procedure can extract an integer,
+               and False is returned if it fails (i.e., the text widget is
+               null, empty, or contains an invalid hexadecimal string.)
+            Get_Binary_From_Text_Widget            Get_Binary_From_Text_Widget            Get_Binary_From_Text_Widget
+                            Motif_Utilities_Get_Binary_From_Text_Widget.ada
+               This procedure returns the integer equivalent of the binary
+               text contained in the passed text widget, via the passed
+               parameter Return_Integer. A BOOLEAN True is returned in
+               Success if the procedure can extract an integer, and False
+               is returned if it fails (i.e., the text widget is null,
+               empty, or contains an invalid binary string.)
+            Set_Boolean_Value_CB            Set_Boolean_Value_CB            Set_Boolean_Value_CB
+                                   Motif_Utilities_Set_Boolean_Value_CB.ada
+               This procedure sets the value of the Boolean variable in the
+               client_data parameter (named Boolean_Value here) to the
+               value in the userData field of the activating widget.
+            Set_Integer_Value_CB            Set_Integer_Value_CB            Set_Integer_Value_CB
+                                   Motif_Utilities_Set_Integer_Value_CB.ada
+               This procedure sets the value of the Integer variable in the
+               client_data parameter (named Integer_Value here) to the
+               value in the userData field of the activating widget.
+            Destroy_Widget_CB            Destroy_Widget_CB            Destroy_Widget_CB
+                                      Motif_Utilities_Destroy_Widget_CB.ada
+               This procedure calls Xt.DestroyWidget on the
+               Widget_To_Be_Destroyed parameter.
+            XmTextSetInsertionPosition            XmTextSetInsertionPosition            XmTextSetInsertionPosition
+                                                        Motif_Utilities.ada
+               Re-imported due to bad Verdix binding.
+            Create_Widget            Create_Widget            Create_Widget
+
+
+                                          9
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+                                                        Motif_Utilities.ada
+               This private unit creates a widget with the passed label
+               parented to the passed parent.
+            Prompt_Response            Prompt_Response            Prompt_Response
+                                                        Motif_Utilities.ada
+               This private unit is used by the public unit Prompt_User to
+               handle the pushbutton callbacks.
+            Prompt_Handle_Event            Prompt_Handle_Event            Prompt_Handle_Event
+                                                        Motif_Utilities.ada
+               This private unit is used by the public unit Prompt_User to
+               handle KeyRelease events.
+            Text_Restrict_CB            Text_Restrict_CB            Text_Restrict_CB
+                                                        Motif_Utilities.ada
+               This private unit is used by the public units
+               Install_Text_Restrictions, Install_Text-
+               _Restrictions_With_Integer_Range, and
+               Install_Text_Restrictions_With_Float_Range to actually
+               perform the text validation and to veto any invalid text
+               modifications.
+
+
+
+          XDG_Server_Main_CB          XDG_Server_Main_CB          XDG_Server_Main_CB
+                                                  XDG_Server_Main_CB(_).ada
+            The XDG_Server_Main_CB package holds XDG Server units to load
+            and save the configuration files, initialize all   set                                                             ``
+            parameters   panels,  and quit the XDG Server GUI.                      ''
+            Open_CB            Open_CB            Open_CB
+                                             XDG_Server_Main_CB_Open_CB.ada
+               This procedure allows the user to open an existing
+               configuration file.
+            Open_Config_File_FSB_CB            Open_Config_File_FSB_CB            Open_Config_File_FSB_CB
+                             XDG_Server_Main_CB_Open_Config_File_FSB_CB.ada
+               This procedure handles the Open FSB callbacks for opening
+               and XDG Server configuration file.
+            Reinitialize_Panels_Timeout            Reinitialize_Panels_Timeout            Reinitialize_Panels_Timeout
+                                                     XDG_Server_Main_CB.ada
+               This procedure waits for the DG Server to load the new
+               configuration file (this happens when the config file
+               changes flag in the interface becomes False), and then calls
+               XDG_Server.Initialize_Set_Parms_Panels to reinitialize all
+               Set Parameters panels.
+            Save_CB            Save_CB            Save_CB
+                                             XDG_Server_Main_CB_Save_CB.ada
+               This procedure allows the user to save the existing data in
+               a configuration file.
+            Save_Config_File_FSB_CB            Save_Config_File_FSB_CB            Save_Config_File_FSB_CB
+                             XDG_Server_Main_CB_Save_Config_File_FSB_CB.ada
+               This procedure handles the Save FSB callbacks for opening
+               and XDG Server configuration file.
+            Quit_CB            Quit_CB            Quit_CB
+                                             XDG_Server_Main_CB_Quit_CB.ada
+               This procedure prompts the user to quit the application. If
+               the user chooses to quit, the application is terminated.
+
+
+                                         10
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                         11
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+          XDG_Server          XDG_Server          XDG_Server
+                                                          XDG_Server(_).ada
+            The XDG_Server package holds XDG Server units to create,
+            initialize, and update all XDG Server windows and panels, to
+            write changes from the set parameters panels to shared memory,
+            and to create and update the ADIS DG Server GUI monitoring
+            displays.
+            Create_Set_Parms_Window_CB            Create_Set_Parms_Window_CB            Create_Set_Parms_Window_CB
+                                        XDG_Server_Create_Set_Parms_Window_
+                                                                     CB.ada
+               This procedure displays the XDG_Server Set Parameters
+               window.
+            Create_Set_Parms_Panel_Network            Create_Set_Parms_Panel_Network            Create_Set_Parms_Panel_Network
+                              XDG_Server_Create_Set_Parms_Panel_Network.ada
+               This procedure displays the Set Parameters Network Panel
+               under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Threshold            Create_Set_Parms_Panel_Threshold            Create_Set_Parms_Panel_Threshold
+                            XDG_Server_Create_Set_Parms_Panel_Threshold.ada
+               This procedure displays the Set Parameters Threshold Panel
+               under the passed widget hierarchy.
+            Create_Set_Parms_Panel_PDU_Filters            Create_Set_Parms_Panel_PDU_Filters            Create_Set_Parms_Panel_PDU_Filters
+                          XDG_Server_Create_Set_Parms_Panel_PDU_Filters.ada
+               This procedure displays the Set Parameters PDU Filters Panel
+               under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Specific_Filters            Create_Set_Parms_Panel_Specific_Filters            Create_Set_Parms_Panel_Specific_Filters
+                     XDG_Server_Create_Set_Parms_Panel_Specific_Filters.ada
+               This procedure displays the Set Parameters Specific Filters
+               Panel under the passed widget hierarchy.
+            Create_Set_Parms_Panel_DG_Parameters            Create_Set_Parms_Panel_DG_Parameters            Create_Set_Parms_Panel_DG_Parameters
+                        XDG_Server_Create_Set_Parms_Panel_DG_Parameters.ada
+               This procedure displays the Set Parameters DG Parameters
+               Panel under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Error            Create_Set_Parms_Panel_Error            Create_Set_Parms_Panel_Error
+                                XDG_Server_Create_Set_Parms_Panel_Error.ada
+               This procedure displays the Set Parameters Error Parameters
+               Panel under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Hash            Create_Set_Parms_Panel_Hash            Create_Set_Parms_Panel_Hash
+                                 XDG_Server_Create_Set_Parms_Panel_Hash.ada
+               This procedure displays the Set Parameters Hash Parameters
+               Panel under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Exercise            Create_Set_Parms_Panel_Exercise            Create_Set_Parms_Panel_Exercise
+                             XDG_Server_Create_Set_Parms_Panel_Exercise.ada
+               This procedure displays the Set Parameters Exercise
+               Parameters Panel under the passed widget hierarchy.
+            Create_Error_Notices_Window_CB            Create_Error_Notices_Window_CB            Create_Error_Notices_Window_CB
+                              XDG_Server_Create_Error_Notices_Window_CB.ada
+               This procedure displays the XDG Server Error Notices window.
+
+
+
+
+
+
+
+
+
+                                         12
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Create_Monitors_Window_CB            Create_Monitors_Window_CB            Create_Monitors_Window_CB
+                                   XDG_Server_Create_Monitors_Window_CB.ada
+               This procedure displays the XDG Server Monitors window.
+            Create_Monitors_Panel_Entities            Create_Monitors_Panel_Entities            Create_Monitors_Panel_Entities
+                              XDG_Server_Create_Monitors_Panel_Entities.ada
+               This procedure displays the Monitor Entities Panel under the
+               passed widget hierarchy.
+            Create_Monitors_Panel_Gateway            Create_Monitors_Panel_Gateway            Create_Monitors_Panel_Gateway
+                               XDG_Server_Create_Monitors_Panel_Gateway.ada
+               This procedure displays the Monitor Gateway Panel under the
+               passed widget hierarchy.
+            Create_Monitors_Panel_Errors            Create_Monitors_Panel_Errors            Create_Monitors_Panel_Errors
+                                XDG_Server_Create_Monitors_Panel_Errors.ada
+               This procedure displays the Monitor Errors Panel under the
+               passed widget hierarchy.
+            Initialize_Panel_Network            Initialize_Panel_Network            Initialize_Panel_Network
+                                    XDG_Server_Initialize_Panel_Network.ada
+               This procedure initializes the Network Panel widgets with
+               the values from the DG Shared Memory interface.
+            Initialize_Panel_Threshold            Initialize_Panel_Threshold            Initialize_Panel_Threshold
+                                  XDG_Server_Initialize_Panel_Threshold.ada
+               This procedure initializes the Threshold Panel widgets with
+               the values from the DG Shared Memory interface.
+            Initialize_Panel_DG_Parameters            Initialize_Panel_DG_Parameters            Initialize_Panel_DG_Parameters
+                              XDG_Server_Initialize_Panel_DG_Parameters.ada
+               This procedure initializes the DG_Parameters Panel widgets
+               with the values from the DG Shared Memory interface.
+            Initialize_Panel_PDU_Filters            Initialize_Panel_PDU_Filters            Initialize_Panel_PDU_Filters
+                                XDG_Server_Initialize_Panel_PDU_Filters.ada
+               This procedure initializes the PDU_Filters Panel widgets
+               with the values from the DG Shared Memory interface.
+            Initialize_Panel_Specific_Filters            Initialize_Panel_Specific_Filters            Initialize_Panel_Specific_Filters
+                           XDG_Server_Initialize_Panel_Specific_Filters.ada
+               This procedure initializes the Specific_Filters Panel
+               widgets with the values from the DG Shared Memory interface.
+            Initialize_Panel_Error            Initialize_Panel_Error            Initialize_Panel_Error
+                                      XDG_Server_Initialize_Panel_Error.ada
+               This procedure initializes the Error Panel widgets with the
+               values from the DG Shared Memory interface.
+            Initialize_Panel_Hash            Initialize_Panel_Hash            Initialize_Panel_Hash
+                                       XDG_Server_Initialize_Panel_Hash.ada
+               This procedure initializes the Hash Panel widgets with the
+               values from the DG Shared Memory interface.
+            Initialize_Panel_Exercise            Initialize_Panel_Exercise            Initialize_Panel_Exercise
+                                   XDG_Server_Initialize_Panel_Exercise.ada
+               This procedure initializes the Exercise Panel widgets with
+               the values from the DG Shared Memory interface.
+
+
+
+
+
+
+
+
+
+                                         13
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Initialize_Set_Parms_Panels            Initialize_Set_Parms_Panels            Initialize_Set_Parms_Panels
+                                 XDG_Server_Initialize_Set_Parms_Panels.ada
+               This procedure initializes all XDG Server Set Parameters
+               panels using values from the DG Shared Memory interface.
+            Update_Error_Notices            Update_Error_Notices            Update_Error_Notices
+                                        XDG_Server_Update_Error_Notices.ada
+               This procedure is a timeout procedure which updates the
+               Error Notices window at an update rate specified in the
+               XDG_Server package spec.
+            Update_Error_History            Update_Error_History            Update_Error_History
+                                        XDG_Server_Update_Error_History.ada
+               This procedure is a timeout procedure which updates the
+               Error History window at an update rate specified in the
+               XDG_Server package spec.
+            Apply_CB            Apply_CB            Apply_CB
+                                                    XDG_Server_Apply_CB.ada
+               This procedure writes all changed values in all Set
+               Parameters panels to shared memory.
+            Cancel_Set_Parms_CB            Cancel_Set_Parms_CB            Cancel_Set_Parms_CB
+                                         XDG_Server_Cancel_Set_Parms_CB.ada
+               This procedure closes the Set Parameters window and cancels
+               all pending XDG Server parameter changes.
+            Close_Window_CB            Close_Window_CB            Close_Window_CB
+                                             XDG_Server_Close_Window_CB.ada
+               This procedure closes the window pointed to by the parameter
+               Shell by unmanaging (not destroying) it.
+
+
+
+          XDG_Client_Main_CB          XDG_Client_Main_CB          XDG_Client_Main_CB
+                                                  XDG_Client_Main_CB(_).ada
+            The XDG_Client_Main_CB package holds XDG Client units to load
+            and save the configuration files, initialize all   set                                                             ``
+            parameters   panels,  and quit the XDG Client GUI.                      ''
+            Open_CB            Open_CB            Open_CB
+                                             XDG_Client_Main_CB_Open_CB.ada
+               This procedure allows the user to open an existing
+               configuration file.
+            Open_Config_File_FSB_CB            Open_Config_File_FSB_CB            Open_Config_File_FSB_CB
+                             XDG_Client_Main_CB_Open_Config_File_FSB_CB.ada
+               This procedure handles the Open FSB callbacks for opening
+               and XDG Client configuration file.
+            Reinitialize_Panels_Timeout            Reinitialize_Panels_Timeout            Reinitialize_Panels_Timeout
+                                                     XDG_Client_Main_CB.ada
+               This procedure waits for the DG Client to load the new
+               configuration file (this happens when the config file
+               changes flag in the interface becomes False) and then calls
+               XDG_Client.Initialize_Set_Parms_Panels to reinitialize all
+               Set Parameters panels.
+            Save_CB            Save_CB            Save_CB
+                                             XDG_Client_Main_CB_Save_CB.ada
+               This procedure allows the user to save the existing data in
+               a configuration file.
+            Save_Config_File_FSB_CB            Save_Config_File_FSB_CB            Save_Config_File_FSB_CB
+
+
+                                         14
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+                             XDG_Client_Main_CB_Save_Config_File_FSB_CB.ada
+               This procedure handles the Save FSB callbacks for opening
+               and XDG Client configuration file.
+            Quit_CB            Quit_CB            Quit_CB
+                                             XDG_Client_Main_CB_Quit_CB.ada
+               This procedure prompts the user to quit the application. If
+               the user chooses to quit, the application is terminated.
+          XDG_Client          XDG_Client          XDG_Client
+                                                          XDG_Client(_).ada
+            The XDG_Client package holds XDG Client units to create,
+            initialize, and update all XDG Client windows and panels, to
+            write changes from the set parameters panels to shared memory,
+            and to create and update the ADIS DG Client GUI monitoring
+            displays.
+            Create_Set_Parms_Window_CB            Create_Set_Parms_Window_CB            Create_Set_Parms_Window_CB
+                                  XDG_Client_Create_Set_Parms_Window_CB.ada
+               This procedure displays the XDG_Client Set Parameters
+               window.
+            Create_Set_Parms_Panel_DG_Parameters            Create_Set_Parms_Panel_DG_Parameters            Create_Set_Parms_Panel_DG_Parameters
+                        XDG_Client_Create_Set_Parms_Panel_DG_Parameters.ada
+               This procedure displays the Set Parameters DG Parameters
+               Panel under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Error            Create_Set_Parms_Panel_Error            Create_Set_Parms_Panel_Error
+                                XDG_Client_Create_Set_Parms_Panel_Error.ada
+               This procedure displays the Set Parameters Error Parameters
+               Panel under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Hash            Create_Set_Parms_Panel_Hash            Create_Set_Parms_Panel_Hash
+                                 XDG_Client_Create_Set_Parms_Panel_Hash.ada
+               This procedure displays the Set Parameters Hash Parameters
+               Panel under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Exercise            Create_Set_Parms_Panel_Exercise            Create_Set_Parms_Panel_Exercise
+                             XDG_Client_Create_Set_Parms_Panel_Exercise.ada
+               This procedure displays the Set Parameters Exercise
+               Parameters Panel under the passed widget hierarchy.
+            Create_Set_Parms_Panel_Synchronization            Create_Set_Parms_Panel_Synchronization            Create_Set_Parms_Panel_Synchronization
+                      XDG_Client_Create_Set_Parms_Panel_Synchronization.ada
+               This procedure displays the Set Parameters Synchronization
+               Parameters Panel under the passed widget hierarchy.
+            Create_Error_Notices_Window_CB            Create_Error_Notices_Window_CB            Create_Error_Notices_Window_CB
+                              XDG_Client_Create_Error_Notices_Window_CB.ada
+               This procedure displays the XDG Client Error Notices window.
+            Create_Monitors_Window_CB            Create_Monitors_Window_CB            Create_Monitors_Window_CB
+                                   XDG_Client_Create_Monitors_Window_CB.ada
+               This procedure displays the XDG Monitors window.
+            Create_Monitors_Panel_Entities            Create_Monitors_Panel_Entities            Create_Monitors_Panel_Entities
+                              XDG_Client_Create_Monitors_Panel_Entities.ada
+               This procedure displays the Monitor Entities Panel under the
+               passed widget hierarchy.
+            Create_Monitors_Panel_Gateway            Create_Monitors_Panel_Gateway            Create_Monitors_Panel_Gateway
+                               XDG_Client_Create_Monitors_Panel_Gateway.ada
+               This procedure displays the Monitor Gateway Panel under the
+               passed widget hierarchy.
+            Create_Monitors_Panel_Errors            Create_Monitors_Panel_Errors            Create_Monitors_Panel_Errors
+                                XDG_Client_Create_Monitors_Panel_Errors.ada
+
+
+                                         15
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+               This procedure displays the Monitor Errors Panel under the
+               passed widget hierarchy.
+            Initialize_Panel_DG_Parameters            Initialize_Panel_DG_Parameters            Initialize_Panel_DG_Parameters
+                              XDG_Client_Initialize_Panel_DG_Parameters.ada
+               This procedure initializes the DG_Parameters Panel widgets
+               with the values from the DG Shared Memory interface.
+            Initialize_Panel_Error            Initialize_Panel_Error            Initialize_Panel_Error
+                                      XDG_Client_Initialize_Panel_Error.ada
+               This procedure initializes the Error Panel widgets with the
+               values from the DG Shared Memory interface.
+            Initialize_Panel_Hash            Initialize_Panel_Hash            Initialize_Panel_Hash
+                                       XDG_Client_Initialize_Panel_Hash.ada
+               This procedure initializes the Hash Panel widgets with the
+               values from the DG Shared Memory interface.
+            Initialize_Panel_Exercise            Initialize_Panel_Exercise            Initialize_Panel_Exercise
+                                   XDG_Client_Initialize_Panel_Exercise.ada
+               This procedure initializes the Exercise Panel widgets with
+               the values from the DG Shared Memory interface.
+            Initialize_Panel_Synchronization            Initialize_Panel_Synchronization            Initialize_Panel_Synchronization
+                            XDG_Client_Initialize_Panel_Synchronization.ada
+               This procedure initializes the Synchronization Panel widgets
+               with the values from the DG Shared Memory interface.
+            Initialize_Set_Parms_Panels            Initialize_Set_Parms_Panels            Initialize_Set_Parms_Panels
+                                 XDG_Client_Initialize_Set_Parms_Panels.ada
+               This procedure initializes all XDG Client Set Parameters
+               panels using values from the DG Shared Memory interface.
+            Update_Error_Notices            Update_Error_Notices            Update_Error_Notices
+                                        XDG_Client_Update_Error_Notices.ada
+               This procedure is a timeout procedure which updates the
+               Error Notices window at an update rate specified in the
+               XDG_Client package spec.
+            Update_Error_History            Update_Error_History            Update_Error_History
+                                        XDG_Client_Update_Error_History.ada
+               This procedure is a timeout procedure which updates the
+               Error History window at an update rate specified in the
+               XDG_Client package spec.
+            Apply_CB            Apply_CB            Apply_CB
+                                                    XDG_Client_Apply_CB.ada
+               This procedure writes all changed values in all Set
+               Parameters panels to shared memory.
+            Cancel_Set_Parms_CB            Cancel_Set_Parms_CB            Cancel_Set_Parms_CB
+                                         XDG_Client_Cancel_Set_Parms_CB.ada
+               This procedure closes the Set Parameters window and cancels
+               all pending XDG Client parameter changes.
+            Close_Window_CB            Close_Window_CB            Close_Window_CB
+                                             XDG_Client_Close_Window_CB.ada
+               This procedure closes the window pointed to by the parameter
+               Shell by unmanaging (not destroying) it.
+
+
+
+          XOS_Main_CB          XOS_Main_CB          XOS_Main_CB
+                                                         XOS_Main_CB(_).ada
+
+
+
+                                         16
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            The XOS_Main_CB package holds XOS units to load and save the
+            configuration files, initialize all ``set parameters'' panels,
+            and quit the XOS GUI.
+            Open_CB            Open_CB            Open_CB
+                                                    XOS_Main_CB_Open_CB.ada
+               This procedure allows the user to open an existing
+               configuration
+            Open_Config_File_FSB_CB            Open_Config_File_FSB_CB            Open_Config_File_FSB_CB
+                                    XOS_Main_CB_Open_Config_File_FSB_CB.ada
+               This procedure handles the Open FSB callbacks for opening an
+               XOS configuration file.
+            Reinitialize_Panels_Timeout            Reinitialize_Panels_Timeout            Reinitialize_Panels_Timeout
+                                                            XOS_Main_CB.ada
+               This procedure waits for the OS to load the new
+               configuration file (this happens when the config file
+               changes flag in the interface becomes False), and then calls
+               XOS.Initialize_Set_Parms_Panels to reinitialize all Set
+               Parameters panels.
+            Save_CB            Save_CB            Save_CB
+                                                    XOS_Main_CB_Save_CB.ada
+               This procedure allows the user to save the existing data in
+               a configuration file.
+            Save_Config_File_FSB_CB            Save_Config_File_FSB_CB            Save_Config_File_FSB_CB
+                                    XOS_Main_CB_Save_Config_File_FSB_CB.ada
+               This procedure handles the Save FSB callbacks for saving an
+               XOS configuration file.
+            Quit_CB            Quit_CB            Quit_CB
+                                                    XOS_Main_CB_Quit_CB.ada
+               This procedure prompts the user to quit the application. If
+               the user chooses to quit, the application is terminated.
+
+
+
+          XOS          XOS          XOS
+                                                                 XOS(_).ada
+            The XOS package holds XOS units to create, initialize, and
+            update all XOS windows and panels, to write changes from the
+            set parameters panels to shared memory, and to create and
+            update the ADIS XOS GUI monitoring displays.
+            Create_Ord_Parms_Window_CB            Create_Ord_Parms_Window_CB            Create_Ord_Parms_Window_CB
+                                         XOS_Create_Ord_Parms_Window_CB.ada
+               This procedure displays the XOS Set Ordnance Parameters
+               window.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                         17
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Create_Ord_Panel_Aero            Create_Ord_Panel_Aero            Create_Ord_Panel_Aero
+                                              XOS_Create_Ord_Panel_Aero.ada
+               This procedure displays the Ordnance Aerodynamics Parameters
+               Panel under the passed widget hierarchy.
+            Create_Ord_Panel_Term            Create_Ord_Panel_Term            Create_Ord_Panel_Term
+                                              XOS_Create_Ord_Panel_Term.ada
+               This procedure displays the Ordnance Termination Parameters
+               Panel under the passed widget hierarchy.
+            Create_Ord_Panel_Gen            Create_Ord_Panel_Gen            Create_Ord_Panel_Gen
+                                               XOS_Create_Ord_Panel_Gen.ada
+               This procedure displays the Ordnance General Parameters
+               Panel under the passed widget hierarchy.
+            Create_Ord_Panel_Entity            Create_Ord_Panel_Entity            Create_Ord_Panel_Entity
+                                            XOS_Create_Ord_Panel_Entity.ada
+               This procedure displays the Ordnance Entity Parameters Panel
+               under the passed widget hierarchy.
+            Create_Ord_Panel_Emitter            Create_Ord_Panel_Emitter            Create_Ord_Panel_Emitter
+                                           XOS_Create_Ord_Panel_Emitter.ada
+               This procedure displays the Ordnance Emitter Parameters
+               Panel under the passed widget hierarchy.
+            Create_Sim_Parms_Window_CB            Create_Sim_Parms_Window_CB            Create_Sim_Parms_Window_CB
+                                         XOS_Create_Sim_Parms_Window_CB.ada
+               This procedure displays the XOS Set Simulation Parameters
+               window.
+            Create_Sim_Panel_Sim            Create_Sim_Panel_Sim            Create_Sim_Panel_Sim
+                                               XOS_Create_Sim_Panel_Sim.ada
+               This procedure displays the Simulation Parameters Panel
+               under the passed widget hierarchy.
+            Create_Other_Parms_Window_CB            Create_Other_Parms_Window_CB            Create_Other_Parms_Window_CB
+                                       XOS_Create_Other_Parms_Window_CB.ada
+               This procedure displays the XOS Set Other Parameters window.
+            Create_Other_Panel_Error            Create_Other_Panel_Error            Create_Other_Panel_Error
+                                           XOS_Create_Other_Panel_Error.ada
+               This procedure displays the Other Error Parameters Panel
+               under the passed widget hierarchy.
+            Create_Error_Notices_Window_CB            Create_Error_Notices_Window_CB            Create_Error_Notices_Window_CB
+                                     XOS_Create_Error_Notices_Window_CB.ada
+               This procedure displays the XOS Error Notices window.
+            Create_Monitors_Window_CB            Create_Monitors_Window_CB            Create_Monitors_Window_CB
+                                          XOS_Create_Monitors_Window_CB.ada
+               This procedure displays the XOS Monitors window.
+            Create_Monitors_Panel_Errors            Create_Monitors_Panel_Errors            Create_Monitors_Panel_Errors
+                                       XOS_Create_Monitors_Panel_Errors.ada
+               This procedure displays the Monitor Errors Panel under the
+               passed widget hierarchy.
+
+
+
+
+
+
+
+
+
+
+
+                                         18
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Initialize_Sim_Panel_Sim            Initialize_Sim_Panel_Sim            Initialize_Sim_Panel_Sim
+                                           XOS_Initialize_Sim_Panel_Sim.ada
+               This procedure initializes the Simulation Panel widgets with
+               the values from the OS Shared Memory interface.
+            Initialize_Ord_Panel_Aero            Initialize_Ord_Panel_Aero            Initialize_Ord_Panel_Aero
+                                          XOS_Initialize_Ord_Panel_Aero.ada
+               This procedure initializes the Ordnance Aerodynamic Panel
+               widgets with the values from the OS Shared Memory interface.
+            Initialize_Ord_Panel_Gen            Initialize_Ord_Panel_Gen            Initialize_Ord_Panel_Gen
+                                           XOS_Initialize_Ord_Panel_Gen.ada
+               This procedure initializes the Ordnance General Panel
+               widgets with the values from the OS Shared Memory interface.
+            Initialize_Ord_Panel_Term            Initialize_Ord_Panel_Term            Initialize_Ord_Panel_Term
+                                          XOS_Initialize_Ord_Panel_Term.ada
+               This procedure initializes the Ordnance Termination Panel
+               widgets with the values from the OS Shared Memory interface.
+            Initialize_Ord_Panel_Entity            Initialize_Ord_Panel_Entity            Initialize_Ord_Panel_Entity
+                                        XOS_Initialize_Ord_Panel_Entity.ada
+               This procedure initializes the Ordnance Entity Panel widgets
+               with the values from the OS Shared Memory interface.
+            Initialize_Ord_Panel_Emitter            Initialize_Ord_Panel_Emitter            Initialize_Ord_Panel_Emitter
+                                       XOS_Initialize_Ord_Panel_Emitter.ada
+               This procedure initializes the Ordnance Emitter Panel
+               widgets with the values from the OS Shared Memory interface.
+            Initialize_Other_Panel_Error            Initialize_Other_Panel_Error            Initialize_Other_Panel_Error
+                                       XOS_Initialize_Other_Panel_Error.ada
+               This procedure initializes the Other Error Panel widgets
+               with the values from the OS Shared Memory interface.
+            Initialize_Ord_Parms_Panels            Initialize_Ord_Parms_Panels            Initialize_Ord_Parms_Panels
+                                        XOS_Initialize_Ord_Parms_Panels.ada
+               This procedure initializes the Ordnance panels by calling
+               their respective Initialize functions.
+            Initialize_Sim_Parms_Panels            Initialize_Sim_Parms_Panels            Initialize_Sim_Parms_Panels
+                                        XOS_Initialize_Sim_Parms_Panels.ada
+               This procedure initializes the Simulation panels by calling
+               their respective Initialize functions.
+            Initialize_Other_Parms_Panels            Initialize_Other_Parms_Panels            Initialize_Other_Parms_Panels
+                                      XOS_Initialize_Other_Parms_Panels.ada
+               This procedure initializes the Other panels by calling their
+               respective Initialize functions.
+            Update_Error_Notices            Update_Error_Notices            Update_Error_Notices
+                                               XOS_Update_Error_Notices.ada
+               This procedure is a timeout procedure which updates the
+               Error Notices window at an update rate specified in the XOS
+               package spec.
+
+
+
+
+
+
+
+
+
+
+
+                                         19
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Update_Error_History            Update_Error_History            Update_Error_History
+                                               XOS_Update_Error_History.ada
+               This procedure is a timeout procedure which updates the
+               Error History window at an update rate specified in the XOS
+               package spec.
+            Sim_Apply_CB            Sim_Apply_CB            Sim_Apply_CB
+                                                       XOS_Sim_Apply_CB.ada
+               This procedure writes all changed values in all Set
+               Simulation Parameters panels to shared memory.
+            Ord_Apply_CB            Ord_Apply_CB            Ord_Apply_CB
+                                                       XOS_Ord_Apply_CB.ada
+               This procedure writes all changed values in all Set Ordnance
+               Parameters panels to shared memory.
+            Ord_Previous_CB            Ord_Previous_CB            Ord_Previous_CB
+                                                    XOS_Ord_Previous_CB.ada
+               This procedure instructs the OS to place the data for the
+               previous munition in the list in shared memory.
+            Ord_Next_CB            Ord_Next_CB            Ord_Next_CB
+                                                        XOS_Ord_Next_CB.ada
+               This procedure instructs the OS to place the data for the
+               next munition in the list in shared memory.
+            Ord_Update_Previous_Next_Buttons            Ord_Update_Previous_Next_Buttons            Ord_Update_Previous_Next_Buttons
+                                   XOS_Ord_Update_Previous_Next_Buttons.ada
+               This procedure updates the Previous and Next buttons on the
+               Ordnance Parameters window based on
+               OS_GUI.Interface.Ordnance_Display.Top_Of_List and
+               OS_GUI.Interface.Ordnance_Display.End_Of_List.
+            Ord_Apply_CB            Ord_Apply_CB            Ord_Apply_CB
+                                                       XOS_Ord_Apply_CB.ada
+               This procedure writes all changed values in all Set Ordnance
+               Parameters panels to shared memory.
+            Other_Apply_CB            Other_Apply_CB            Other_Apply_CB
+                                                     XOS_Other_Apply_CB.ada
+               This procedure writes all changed values in all Set Other
+               Parameters panels to shared memory.
+            Text_Country_CB            Text_Country_CB            Text_Country_CB
+                                                    XOS_Text_Country_CB.ada
+               This procedure reads the integer out of the parent textfield
+               widget and places the equivalent country name (from
+               DIS_Types.A_COUNTRY_ID) into the label widget whose widget
+               ID is passed in as the client data.
+            Sim_World_Coord_CB            Sim_World_Coord_CB            Sim_World_Coord_CB
+                                                 XOS_Sim_World_Coord_CB.ada
+               This procedure reads the values out of the standard database
+               origin coordinate fields (in Geodetic coordinates), converts
+               these into world coordinates (AKA, Geocentric coordinates),
+               and places these new values into the appropriate labels in
+               the XOS Simulation Parameters panel.
+
+
+
+
+
+
+
+
+                                         20
+
+
+                           JFT-145-GUI.SRM-V1, 30-Sept-94
+
+
+            Close_Window_CB            Close_Window_CB            Close_Window_CB
+                                                    XOS_Close_Window_CB.ada
+               This procedure closes the window pointed to by the parameter
+               Shell.
+            Cancel_Ord_Parms_Window_CB            Cancel_Ord_Parms_Window_CB            Cancel_Ord_Parms_Window_CB
+                                         XOS_Cancel_Ord_Parms_Window_CB.ada
+               This procedure closes the Ordnance Parameters window and
+               cancels all pending XDG Server parameter changes.
+            Cancel_Sim_Parms_Window_CB            Cancel_Sim_Parms_Window_CB            Cancel_Sim_Parms_Window_CB
+                                         XOS_Cancel_Sim_Parms_Window_CB.ada
+               This procedure closes the Sim Parameters window and cancels
+               all pending XDG Server parameter changes.
+            Cancel_Other_Parms_Window_CB            Cancel_Other_Parms_Window_CB            Cancel_Other_Parms_Window_CB
+                                       XOS_Cancel_Other_Parms_Window_CB.ada
+               This procedure closes the Other Parameters window and
+               cancels all pending XDG Server parameter changes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                         21

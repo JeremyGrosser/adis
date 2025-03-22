@@ -1,0 +1,34 @@
+This is the Ada Distributed Interactive Simulation (ADIS) Project.
+
+The Advanced Research Projects Agency (ARPA) has created a set of network
+protocols used to link geographically distributed simulations together.  These
+protocols form a technology called Distributed Interactive Simulation.  One
+purpose of these protocols is to support the acquisition, testing, and training
+processes associated with D.O.D weapon systems.  Commercial use of this
+technology is also being explored.
+
+The ADIS project is a U.S. Government owned set of DIS tools.  There are three 
+parts of ADIS.  The DIS Gateway (DG) is a cell interface unit that can be used
+to connect an application to a distributed simulation exercise.  The Gateway is
+based on a client server architecture and allows multiple applications to use
+a single physical network tap.  The DIS Library (DL) is collection of packages
+that include DIS object bindings and common DIS functions.  The Ordnance Server
+(OS) is an application built on the DG and DL that is capable of simulating
+ordnance from a parent entity upon receipt of a fire PDU through the eventual
+detonation of the ordnance.
+
+For more information on the ADIS components see the Software Users Manual for
+each.
+
+This revision (V1.1) contains updates to the Gateway Server that allow Entity
+State PDUs with articulated parts to be handled correctly, and generate the
+correct source ip address in outgoing PDUs.  Support for a more
+sophisticated missile model and multiple guidance methods was added to the OS.
+Errors in the coordinate conversions in the DL were corrected.
+
+Known problems:  The Gateway dead reckoning models need to make use of the PDU
+                 timestamps.
+                 There is a memory leak in the DG Server.  This can cause it to
+                 crash during heavy network trafic.
+		 The Ordnance Server Generic Fly-Out Model does not correctly
+		 account for gravity.
