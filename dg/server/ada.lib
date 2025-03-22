@@ -1,0 +1,5 @@
+!ada library
+ADAPATH= ../common
+ADAPATH= ../../dl
+ADAPATH= ../../common
+ADAPATH= /usr/vads/self/verdixlib /usr/vads/self/standard

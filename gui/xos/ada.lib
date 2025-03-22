@@ -1,0 +1,13 @@
+!ada library
+ADAPATH= ../utilities
+ADAPATH= ../../os/wo_modsaf
+ADAPATH= ../../os/common
+ADAPATH= ../../dg/common
+ADAPATH= ../../dg/client
+ADAPATH= ../../dl
+ADAPATH= ../../common
+ADAPATH= /usr/vads/self/verdixlib
+ADAPATH= /usr/vads/self/standard /usr/vads/self/axi/motif
+ADAPATH= /usr/vads/self/axi/xlibxt /usr/vads/self/axi/stars-xlibxt
+ADAPATH= /usr/vads/self/publiclib
+ADAPATH= /usr/vads/self/verdixlib /usr/vads/self/standard

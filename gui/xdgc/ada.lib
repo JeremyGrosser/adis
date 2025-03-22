@@ -1,0 +1,10 @@
+!ada library
+ADAPATH= ../utilities
+ADAPATH= ../../dg/client
+ADAPATH= ../../dg/common
+ADAPATH= ../../dl
+ADAPATH= ../../common
+ADAPATH= /usr/vads/self/verdixlib
+ADAPATH= /usr/vads/self/standard /usr/vads/self/axi/motif
+ADAPATH= /usr/vads/self/axi/xlibxt /usr/vads/self/axi/stars-xlibxt
+ADAPATH= /usr/vads/self/publiclib

@@ -1,0 +1,4 @@
+!ada library
+ADAPATH= /usr/vads/self/verdixlib /usr/vads/self/standard
+ADAPATH= /usr/vads/self/axi/motif /usr/vads/self/axi/xlibxt
+ADAPATH= /usr/vads/self/axi/stars-xlibxt /usr/vads/self/publiclib

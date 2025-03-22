@@ -1,0 +1,143 @@
+--
+--                            U N C L A S S I F I E D
+--
+--  *=========================================================================*
+--  |                                                                         |
+--  |                         Manned Flight Simulator                         |
+--  |                Naval Air Warfare Center Aircraft Division               |
+--  |                        Patuxent River, Maryland                         |
+--  |                                                                         |
+--  *=========================================================================*
+--
+------------------------------------------------------------------------------
+--
+-- UNIT NAME        : DG_Simulation_Management.Store_Transmitter_Data
+--
+-- FILE NAME        : DG_SimMgmt_Store_Transmitter_Data.ada
+--
+-- PROJECT          : Ada Distributed Interactive Simulation (ADIS)
+--                    DIS Gateway (DG) CSCI
+--
+-- AUTHOR           : B. Dufault - J. F. Taylor, Inc.
+--
+-- ORIGINATION DATE : July 08, 1994
+--
+-- PURPOSE:
+--   - 
+--
+-- IMPLEMENTATION NOTES:
+--   - 
+--
+-- EXCEPTIONS:
+--   - None.
+--
+-- PORTABILITY ISSUES:
+--   - None.
+--
+-- ANTICIPATED CHANGES:
+--   - None.
+--
+------------------------------------------------------------------------------
+
+with DG_Hash_Table_Support,
+     System;
+
+separate (DG_Simulation_Management)
+
+procedure Store_Transmitter_Data(
+   Transmitter_Info : in     DIS_Types.A_TRANSMITTER_PDU;
+   Simulation_Data  : in out DG_Interface_Types.SIMULATION_DATA_TYPE;
+   Status           :    out DG_Status.STATUS_TYPE) is
+
+   Entity_Index      : INTEGER;
+   Local_Status      : DG_Status.STATUS_TYPE;
+   Transmitter_Index : INTEGER;
+
+   LOCAL_FAILURE : EXCEPTION;
+
+   function "="(Left, Right : DG_Status.STATUS_TYPE)
+     return BOOLEAN
+       renames DG_Status."=";
+
+begin  -- Store_Transmitter_Data
+
+   Status := DG_Status.SUCCESS;
+
+   DG_Hash_Table_Support.Entity_Hash_Index(
+     Command    => DG_Hash_Table_Support.FIND,
+     Entity_ID  => Transmitter_Info.Entity_ID,
+     Hash_Table => Simulation_Data.Entity_Hash_Table,
+     Hash_Index => Entity_Index,
+     Status     => Local_Status);
+
+   if (Local_Status = DG_Status.ENTIDX_LOOP_FAILURE) then
+
+      Status := DG_Status.SIMMGMT_STRTRAN_NO_ENTITY_FAILURE;
+
+   elsif (DG_Status.Failure(Local_Status)) then
+
+      raise LOCAL_FAILURE;
+
+   else
+
+      DG_Hash_Table_Support.Entity_Hash_Index(
+        Command    => DG_Hash_Table_Support.ADD,
+        Entity_ID  => Transmitter_Info.Entity_ID,
+        Hash_Table => Simulation_Data.Transmitter_Hash_Table,
+        Hash_Index => Transmitter_Index,
+        Status     => Local_Status);
+
+      if (Local_Status = DG_Status.ENTIDX_LOOP_FAILURE) then
+
+         Status := DG_Status.SIMMGMT_STRTRAN_TABLE_FULL;
+
+      elsif (DG_Status.Failure(Local_Status)) then
+
+         raise LOCAL_FAILURE;
+
+      else
+
+         Store_Transmitter_Info:
+         declare
+
+            Transmitter_Storage : DIS_Types.A_TRANSMITTER_PDU(
+                                    Antenna_Pattern_Length =>
+                                      Transmitter_Info.Antenna_Pattern_Length,
+                                    Length_Of_Modulation_Parms =>
+                                      Transmitter_Info.
+                                        Length_Of_Modulation_Parms);
+
+              for Transmitter_Storage use at
+                Simulation_Data.Transmitter_Data_Table(
+                  Transmitter_Index)'ADDRESS;
+
+         begin  -- Store_Transmitter_Info
+
+            Transmitter_Storage := Transmitter_Info;
+
+            Simulation_Data.Entity_XRef_Table(Entity_Index).Transmitter_Index
+              := Transmitter_Index;
+
+         end Store_Transmitter_Info;
+
+      end if;
+
+   end if;
+
+exception
+
+   when LOCAL_FAILURE =>
+
+      Status := Local_Status;
+
+   when OTHERS =>
+
+      Status := DG_Status.SIMMGMT_STRTRAN_FAILURE;
+
+end Store_Transmitter_Data;
+
+------------------------------------------------------------------------------
+--
+-- MODIFICATION HISTORY:
+--
+------------------------------------------------------------------------------
